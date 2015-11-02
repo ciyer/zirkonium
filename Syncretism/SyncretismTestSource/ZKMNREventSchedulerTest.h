@@ -6,7 +6,7 @@
 //  Copyright 2007 C. Ramakrishnan/ZKM. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "ZKMNRAbstractProcessorTest.h"
 
 @interface ZKMNRSchedulerTestEvent : ZKMNREvent {

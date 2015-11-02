@@ -127,31 +127,31 @@
 	[simulator start];
 		// 0.00 -> 0.23
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.f, 0.0001f, @"Center should not have moved");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.f, 0.0001f, @"Center should not have moved");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 0.23 -> 0.46
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.09f, 0.02f, @"Center should be almost 0.1f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.09f, 0.02f, @"Center should be almost 0.1f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 0.46 -> 0.69
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.1f, 0.0001f, @"Center should be 0.1f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.1f, 0.0001f, @"Center should be 0.1f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 0.69 -> 0.92
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.25f, 0.1f, @"Center should be almost 0.3f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.25f, 0.1f, @"Center should be almost 0.3f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 0.92 -> 1.15
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.4f, 0.1f, @"Center should be almost 0.4f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.4f, 0.1f, @"Center should be almost 0.4f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 1.15 -> 1.38
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.5f, 0.1f, @"Center should be 0.5f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.5f, 0.1f, @"Center should be 0.5f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 1.38 -> 1.61
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.5f, 0.1f, @"Center should be 0.5f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.5f, 0.1f, @"Center should be 0.5f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 	
 	[event1 release], [event2 release], [event3 release];
@@ -198,31 +198,31 @@
 	[simulator start];
 		// 0.00 -> 0.23
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.f, 0.0001f, @"Center should not have moved");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.f, 0.0001f, @"Center should not have moved");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 0.23 -> 0.46
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.25f, 0.05f, @"Center should be almost 0.25f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.25f, 0.05f, @"Center should be almost 0.25f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 0.46 -> 0.69
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.25f, 0.0001f, @"Center should be 0.25f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.25f, 0.0001f, @"Center should be 0.25f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 0.69 -> 0.92
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, -0.75f, 0.1f, @"Center should be almost -0.75f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, -0.75f, 0.1f, @"Center should be almost -0.75f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 0.92 -> 1.15
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, -0.75f, 0.0001f, @"Center should be -0.75f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, -0.75f, 0.0001f, @"Center should be -0.75f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 1.15 -> 1.38
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.67f, 0.1f, @"Center should be around 0.67f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.67f, 0.1f, @"Center should be around 0.67f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 		// 1.38 -> 1.61
 	[scheduler task: 0.23];
-	STAssertEqualsWithAccuracy([source center].azimuth, 0.5f, 0.1f, @"Center should be 0.5f");
+	XCTAssertEqualWithAccuracy([source center].azimuth, 0.5f, 0.1f, @"Center should be 0.5f");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 	
 	[event1 release], [event2 release], [event3 release];

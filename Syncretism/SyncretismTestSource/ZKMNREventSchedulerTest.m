@@ -76,42 +76,42 @@
 	// start playing
 	[simulator start];
 	[scheduler task: 0.23];
-	STAssertFalse(wasEventInvoked, @"The event should not have been invoked");
-	STAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
-	STAssertFalse(wasEventInvokedTwice, @"The event was twice");
+	XCTAssertFalse(wasEventInvoked, @"The event should not have been invoked");
+	XCTAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
+	XCTAssertFalse(wasEventInvokedTwice, @"The event was twice");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 	
 	[scheduler task: 0.23];
-	STAssertFalse(wasEventInvoked, @"The event should not have been invoked");
-	STAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
-	STAssertFalse(wasEventInvokedTwice, @"The event was twice");
+	XCTAssertFalse(wasEventInvoked, @"The event should not have been invoked");
+	XCTAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
+	XCTAssertFalse(wasEventInvokedTwice, @"The event was twice");
 		// task again -- shouldn't change anything as time has not advanced
 	[scheduler task: 0.23];
-	STAssertFalse(wasEventInvoked, @"The event should not have been invoked");
-	STAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
-	STAssertFalse(wasEventInvokedTwice, @"The event was twice");
+	XCTAssertFalse(wasEventInvoked, @"The event should not have been invoked");
+	XCTAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
+	XCTAssertFalse(wasEventInvokedTwice, @"The event was twice");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 	
 	[scheduler task: 0.23];
-	STAssertTrue(wasEventInvoked, @"The event should have been invoked");
-	STAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
-	STAssertFalse(wasEventInvokedTwice, @"The event was twice");
+	XCTAssertTrue(wasEventInvoked, @"The event should have been invoked");
+	XCTAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
+	XCTAssertFalse(wasEventInvokedTwice, @"The event was twice");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 	
 	[scheduler task: 0.23];
-	STAssertTrue(wasEventInvoked, @"The event should have been invoked");
-	STAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
-	STAssertFalse(wasEventInvokedTwice, @"The event was twice");
+	XCTAssertTrue(wasEventInvoked, @"The event should have been invoked");
+	XCTAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
+	XCTAssertFalse(wasEventInvokedTwice, @"The event was twice");
 	[simulator simulateNumCalls: 20 numFrames: 512];
 	
 	[scheduler task: 0.23];
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the pink noise was silent");
-	STAssertTrue(wasEventInvoked, @"The event should have been invoked");
-	STAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
-	STAssertFalse(wasEventInvokedTwice, @"The event was twice");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the pink noise was silent");
+	XCTAssertTrue(wasEventInvoked, @"The event should have been invoked");
+	XCTAssertFalse(wasEventInvokedEarly, @"The event was invoked early");
+	XCTAssertFalse(wasEventInvokedTwice, @"The event was twice");
 	
 	[simulator stop];
 }

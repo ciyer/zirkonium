@@ -66,50 +66,50 @@ static BOOL FloatsAreEffectivelyEqual(float float1, float float2)
 	[layout setSpeakerLayoutName: @"Quadraphonic"];
 	[layout setSpeakerPositionRings: [NSArray arrayWithObject: speakers]];
 	
-	STAssertEquals([layout numberOfRings], (unsigned) 1, @"Quadrophonic layout should have 1 ring");
-	STAssertEquals([layout numberOfSpeakers], (unsigned) 4, @"Quadrophonic layout should have 4 speakers");
+	XCTAssertEqual([layout numberOfRings], (unsigned) 1, @"Quadrophonic layout should have 1 ring");
+	XCTAssertEqual([layout numberOfSpeakers], (unsigned) 4, @"Quadrophonic layout should have 4 speakers");
 	
-	STAssertEquals([[layout numberOfSpeakersPerRing] objectAtIndex: 0], [NSNumber numberWithUnsignedInt: 4], @"Quadrophonic layout should have 4 speakers in 1 ring");
+	XCTAssertEqual([[layout numberOfSpeakersPerRing] objectAtIndex: 0], [NSNumber numberWithUnsignedInt: 4], @"Quadrophonic layout should have 4 speakers in 1 ring");
 	
 	// check the positions
 	ZKMNRSphericalCoordinateCPP	platonic;
 
 
 	position = [[layout speakerPositions] objectAtIndex: 0];
-	STAssertEquals([position ringNumber], (int) 0, @"All quad speakers should be in ring number 0");
+	XCTAssertEqual([position ringNumber], (int) 0, @"All quad speakers should be in ring number 0");
 	physicalRect = [position coordRectangular];
 	BOOL isLeftRear = FloatsAreEffectivelyEqual(physicalRect.x, -1.f) && FloatsAreEffectivelyEqual(physicalRect.y, 1.f);
-	STAssertTrue(isLeftRear, @"Speaker 0 rectangular should be {-1.f, 1.f}, not {%.2f, %.2f}", physicalRect.x, physicalRect.y);
+	XCTAssertTrue(isLeftRear, @"Speaker 0 rectangular should be {-1.f, 1.f}, not {%.2f, %.2f}", physicalRect.x, physicalRect.y);
 	platonic = [position coordPlatonic];
 	isLeftRear = FloatsAreEffectivelyEqual(platonic.azimuth, 0.75f) && FloatsAreEffectivelyEqual(platonic.zenith, 0.f) && FloatsAreEffectivelyEqual(platonic.radius, 1.f);
-	STAssertTrue(isLeftRear, @"Speaker 0 platonic should be {0.75f, 0.f}, not {%.2f, %.2f}", platonic.azimuth, platonic.zenith);
+	XCTAssertTrue(isLeftRear, @"Speaker 0 platonic should be {0.75f, 0.f}, not {%.2f, %.2f}", platonic.azimuth, platonic.zenith);
 	
 	position = [[layout speakerPositions] objectAtIndex: 1];
-	STAssertEquals([position ringNumber], (int) 0, @"All quad speakers should be in ring number 0");
+	XCTAssertEqual([position ringNumber], (int) 0, @"All quad speakers should be in ring number 0");
 	physicalRect = [position coordRectangular];
 	BOOL isLeftFront = FloatsAreEffectivelyEqual(physicalRect.x, 1.f) && FloatsAreEffectivelyEqual(physicalRect.y, 1.f);
-	STAssertTrue(isLeftFront, @"Speaker 1 rectangular should be {1.f, 1.f}, not {%.2f, %.2f}", physicalRect.x, physicalRect.y);
+	XCTAssertTrue(isLeftFront, @"Speaker 1 rectangular should be {1.f, 1.f}, not {%.2f, %.2f}", physicalRect.x, physicalRect.y);
 	platonic = [position coordPlatonic];
 	isLeftFront = FloatsAreEffectivelyEqual(platonic.azimuth, 0.25f) && FloatsAreEffectivelyEqual(platonic.zenith, 0.f) && FloatsAreEffectivelyEqual(platonic.radius, 1.f);
-	STAssertTrue(isLeftFront, @"Speaker 1 platonic should be {0.25f, 0.f}, not {%.2f, %.2f}", platonic.azimuth, platonic.zenith);
+	XCTAssertTrue(isLeftFront, @"Speaker 1 platonic should be {0.25f, 0.f}, not {%.2f, %.2f}", platonic.azimuth, platonic.zenith);
 	
 	position = [[layout speakerPositions] objectAtIndex: 2];
-	STAssertEquals([position ringNumber], (int) 0, @"All quad speakers should be in ring number 0");
+	XCTAssertEqual([position ringNumber], (int) 0, @"All quad speakers should be in ring number 0");
 	physicalRect = [position coordRectangular];
 	BOOL isRightFront = FloatsAreEffectivelyEqual(physicalRect.x, 1.f) && FloatsAreEffectivelyEqual(physicalRect.y, -1.f);
-	STAssertTrue(isRightFront, @"Speaker 2 rectangular should be {1.f, -1.f}, not {%.2f, %.2f}", physicalRect.x, physicalRect.y);
+	XCTAssertTrue(isRightFront, @"Speaker 2 rectangular should be {1.f, -1.f}, not {%.2f, %.2f}", physicalRect.x, physicalRect.y);
 	platonic = [position coordPlatonic];
 	isRightFront = FloatsAreEffectivelyEqual(platonic.azimuth, -0.25f) && FloatsAreEffectivelyEqual(platonic.zenith, 0.f) && FloatsAreEffectivelyEqual(platonic.radius, 1.f);
-	STAssertTrue(isRightFront, @"Speaker 2 platonic should be {-0.25f, 0.f}, not {%.2f, %.2f}", platonic.azimuth, platonic.zenith);
+	XCTAssertTrue(isRightFront, @"Speaker 2 platonic should be {-0.25f, 0.f}, not {%.2f, %.2f}", platonic.azimuth, platonic.zenith);
 	
 	position = [[layout speakerPositions] objectAtIndex: 3];
-	STAssertEquals([position ringNumber], (int) 0, @"All quad speakers should be in ring number 0");
+	XCTAssertEqual([position ringNumber], (int) 0, @"All quad speakers should be in ring number 0");
 	physicalRect = [position coordRectangular];
 	BOOL isRightRear = FloatsAreEffectivelyEqual(physicalRect.x, -1.f) && FloatsAreEffectivelyEqual(physicalRect.y, -1.f);
-	STAssertTrue(isRightRear, @"Speaker 3 rectangular should be {-1.f, -1.f}, not {%.2f, %.2f}", physicalRect.x, physicalRect.y);
+	XCTAssertTrue(isRightRear, @"Speaker 3 rectangular should be {-1.f, -1.f}, not {%.2f, %.2f}", physicalRect.x, physicalRect.y);
 	platonic = [position coordPlatonic];
 	isRightRear = FloatsAreEffectivelyEqual(platonic.azimuth, -0.75f) && FloatsAreEffectivelyEqual(platonic.zenith, 0.f) && FloatsAreEffectivelyEqual(platonic.radius, 1.f);
-	STAssertTrue(isRightRear, @"Speaker 3 platonic should be {-0.75f, 0.f}, not {%.2f, %.2f}", platonic.azimuth, platonic.zenith);
+	XCTAssertTrue(isRightRear, @"Speaker 3 platonic should be {-0.75f, 0.f}, not {%.2f, %.2f}", platonic.azimuth, platonic.zenith);
 	
 	[layout release];
 }
@@ -180,23 +180,23 @@ static BOOL FloatsAreEffectivelyEqual(float float1, float float2)
 	unsigned i;
 	for (i = 0; layoutPosition = [speakerPositions nextObject]; ++i) {
 		ZKMNRSpeakerPosition* pos = [[fiveDot0Layout speakerPositions] objectAtIndex: i];
-		STAssertEquals([layoutPosition coordPlatonic].azimuth, [pos coordPlatonic].azimuth,
+		XCTAssertEqual([layoutPosition coordPlatonic].azimuth, [pos coordPlatonic].azimuth,
 			@"Platonic azimuth does not match");
-		STAssertEquals([layoutPosition coordPlatonic].zenith, [pos coordPlatonic].zenith,
+		XCTAssertEqual([layoutPosition coordPlatonic].zenith, [pos coordPlatonic].zenith,
 			@"Platonic zenith does not match");
 			
-		STAssertEquals([layoutPosition coordPhysical].azimuth, [pos coordPhysical].azimuth,
+		XCTAssertEqual([layoutPosition coordPhysical].azimuth, [pos coordPhysical].azimuth,
 			@"Physical azimuth does not match");
-		STAssertEquals([layoutPosition coordPhysical].zenith, [pos coordPhysical].zenith,
+		XCTAssertEqual([layoutPosition coordPhysical].zenith, [pos coordPhysical].zenith,
 			@"Physical zenith does not match");
-		STAssertEquals([layoutPosition coordPhysical].radius, [pos coordPhysical].radius,
+		XCTAssertEqual([layoutPosition coordPhysical].radius, [pos coordPhysical].radius,
 			@"Physical radius does not match");
 			
-		STAssertEquals([layoutPosition coordRectangular].x, [pos coordRectangular].x,
+		XCTAssertEqual([layoutPosition coordRectangular].x, [pos coordRectangular].x,
 			@"Physical x does not match");
-		STAssertEquals([layoutPosition coordRectangular].y, [pos coordRectangular].y,
+		XCTAssertEqual([layoutPosition coordRectangular].y, [pos coordRectangular].y,
 			@"Physical y does not match");
-		STAssertEquals([layoutPosition coordRectangular].z, [pos coordRectangular].z,
+		XCTAssertEqual([layoutPosition coordRectangular].z, [pos coordRectangular].z,
 			@"Physical z does not match");
 	}
 	

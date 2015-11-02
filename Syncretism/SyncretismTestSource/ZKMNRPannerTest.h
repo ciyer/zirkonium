@@ -6,11 +6,11 @@
 //  Copyright 2006 C. Ramakrishnan/ZKM. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import <Syncretism/Syncretism.h>
 
 
-@interface ZKMNRPannerTest : SenTestCase {
+@interface ZKMNRPannerTest : XCTestCase {
 
 }
 

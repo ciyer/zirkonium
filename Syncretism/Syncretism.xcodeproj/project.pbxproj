@@ -857,7 +857,6 @@
 				3669644C0AEE89B100E4EAC9 /* Resources */,
 				3669644D0AEE89B100E4EAC9 /* Sources */,
 				3669644E0AEE89B100E4EAC9 /* Frameworks */,
-				3669644F0AEE89B100E4EAC9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -867,7 +866,7 @@
 			name = SyncretismTest;
 			productName = SyncretismTest;
 			productReference = 366964510AEE89B100E4EAC9 /* SyncretismTest.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8DC2EF4F0486A6940098B216 /* Syncretism */ = {
 			isa = PBXNativeTarget;
@@ -935,22 +934,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3669644F0AEE89B100E4EAC9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36226F460B3AC10A009CAA75 /* Sources */ = {
@@ -1240,6 +1223,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(value)",
 					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+					"$(inherited)",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -1256,13 +1240,10 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
-					"-framework",
-					SenTestingKit,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SyncretismTest;
 				VALID_ARCHS = "i386 x86_64";
-				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
 			name = Debug;
@@ -1275,6 +1256,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(value)",
 					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+					"$(inherited)",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -1289,13 +1271,10 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
-					"-framework",
-					SenTestingKit,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SyncretismTest;
 				VALID_ARCHS = "i386 x86_64";
-				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
 			name = Release;

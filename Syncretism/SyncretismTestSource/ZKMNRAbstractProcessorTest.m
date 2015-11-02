@@ -96,7 +96,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [myMixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file was silent");
 	
 	[mySimulator stop];
 	[myFile release];
