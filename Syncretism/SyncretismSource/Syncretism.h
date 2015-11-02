@@ -30,7 +30,8 @@
 #import <Syncretism/ZKMORMixerMatrix.h>
 #import <Syncretism/ZKMORNoise.h>
 #import <Syncretism/ZKMOROutput.h>
-#import <Syncretism/ZKMORQuickTime.h>
+// Quicktime support is not currently working
+//#import <Syncretism/ZKMORQuickTime.h>
 #import <Syncretism/ZKMORRenderSimulator.h>
 #import <Syncretism/ZKMORUtilities.h>
 

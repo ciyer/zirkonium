@@ -37,7 +37,6 @@
 		2020CE040AF6AEDB004E30A7 /* ZKMORAudioFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 2020CDD10AF6AEDA004E30A7 /* ZKMORAudioFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2020CE050AF6AEDB004E30A7 /* ZKMORAudioFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2020CDD20AF6AEDA004E30A7 /* ZKMORAudioFile.mm */; };
 		2020CE060AF6AEDB004E30A7 /* ZKMORQuickTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2020CDD30AF6AEDA004E30A7 /* ZKMORQuickTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2020CE070AF6AEDB004E30A7 /* ZKMORQuickTime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2020CDD40AF6AEDA004E30A7 /* ZKMORQuickTime.mm */; };
 		2020CE080AF6AEDB004E30A7 /* ZKMORAudioFileOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = 2020CDD50AF6AEDA004E30A7 /* ZKMORAudioFileOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2020CE090AF6AEDB004E30A7 /* ZKMORAudioFileOutput.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2020CDD60AF6AEDA004E30A7 /* ZKMORAudioFileOutput.mm */; };
 		2020CE0A0AF6AEDB004E30A7 /* ZKMORNoise.h in Headers */ = {isa = PBXBuildFile; fileRef = 2020CDD80AF6AEDA004E30A7 /* ZKMORNoise.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -50,7 +49,6 @@
 		2020CE110AF6AEDB004E30A7 /* ZKMORLogPrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2020CDE10AF6AEDA004E30A7 /* ZKMORLogPrinter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2020CE120AF6AEDB004E30A7 /* ZKMORLogPrinter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2020CDE20AF6AEDB004E30A7 /* ZKMORLogPrinter.cpp */; };
 		2020CE130AF6AEDB004E30A7 /* ZKMORQTReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 2020CDE30AF6AEDB004E30A7 /* ZKMORQTReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2020CE140AF6AEDB004E30A7 /* ZKMORQTReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2020CDE40AF6AEDB004E30A7 /* ZKMORQTReader.mm */; };
 		2020CE150AF6AEDB004E30A7 /* ZKMORThreadBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 2020CDE50AF6AEDB004E30A7 /* ZKMORThreadBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2020CE160AF6AEDB004E30A7 /* ZKMORThreadBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2020CDE60AF6AEDB004E30A7 /* ZKMORThreadBridge.cpp */; };
 		2020CE170AF6AEDB004E30A7 /* ZKMORZone.h in Headers */ = {isa = PBXBuildFile; fileRef = 2020CDE70AF6AEDB004E30A7 /* ZKMORZone.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -869,7 +867,7 @@
 			name = SyncretismTest;
 			productName = SyncretismTest;
 			productReference = 366964510AEE89B100E4EAC9 /* SyncretismTest.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		8DC2EF4F0486A6940098B216 /* Syncretism */ = {
 			isa = PBXNativeTarget;
@@ -1007,13 +1005,11 @@
 				2020CE010AF6AEDB004E30A7 /* ZKMORUtilities.mm in Sources */,
 				2020CE030AF6AEDB004E30A7 /* ZKMORRenderSimulator.mm in Sources */,
 				2020CE050AF6AEDB004E30A7 /* ZKMORAudioFile.mm in Sources */,
-				2020CE070AF6AEDB004E30A7 /* ZKMORQuickTime.mm in Sources */,
 				2020CE090AF6AEDB004E30A7 /* ZKMORAudioFileOutput.mm in Sources */,
 				2020CE0B0AF6AEDB004E30A7 /* ZKMORNoise.m in Sources */,
 				2020CE0D0AF6AEDB004E30A7 /* ZKMORAudioHardwareSystem.mm in Sources */,
 				2020CE100AF6AEDB004E30A7 /* ZKMORFileStreamer.cpp in Sources */,
 				2020CE120AF6AEDB004E30A7 /* ZKMORLogPrinter.cpp in Sources */,
-				2020CE140AF6AEDB004E30A7 /* ZKMORQTReader.mm in Sources */,
 				2020CE160AF6AEDB004E30A7 /* ZKMORThreadBridge.cpp in Sources */,
 				2020CE180AF6AEDB004E30A7 /* ZKMORZone.cpp in Sources */,
 				2020CE220AF6AEEB004E30A7 /* ZKMORLogger.cpp in Sources */,
@@ -1089,11 +1085,9 @@
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Syncretism_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TetGenSource\"";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@loader_path/../Frameworks";
@@ -1102,16 +1096,14 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/TetGenSource\"";
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS_QUOTED_FOR_TARGET_1)",
 					"-lm",
 				);
 				OTHER_LDFLAGS_QUOTED_FOR_TARGET_1 = "-L\"$(SRCROOT)/TetGenSource\"";
 				PRODUCT_NAME = Syncretism;
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = framework;
-				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
@@ -1123,10 +1115,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Syncretism_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TetGenSource\"";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@loader_path/../Frameworks";
@@ -1135,14 +1125,13 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/TetGenSource\"";
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS_QUOTED_FOR_TARGET_1)",
 					"-lm",
 				);
 				OTHER_LDFLAGS_QUOTED_FOR_TARGET_1 = "-L\"$(SRCROOT)/TetGenSource\"";
 				PRODUCT_NAME = Syncretism;
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -1153,12 +1142,12 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPLUSPLUSFLAGS = "-DCAAF_USE_EXTAUDIOFILE=0";
 				PREBINDING = NO;
 				SDKROOT = macosx;
 				SYMROOT = ../build;
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "";
 			};
 			name = Debug;
 		};
@@ -1168,12 +1157,12 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPLUSPLUSFLAGS = "-DCAAF_USE_EXTAUDIOFILE=0";
 				PREBINDING = NO;
 				SDKROOT = macosx;
 				SYMROOT = ../build;
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "";
 			};
 			name = Release;
 		};
@@ -1272,6 +1261,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SyncretismTest;
+				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
@@ -1304,6 +1294,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SyncretismTest;
+				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
