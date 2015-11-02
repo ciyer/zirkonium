@@ -205,7 +205,7 @@
 	glGetDoublev(GL_MODELVIEW_MATRIX, modelview);
 	glGetIntegerv(GL_VIEWPORT, viewport);
 	glReadPixels((int) point.x, (int) point.y, 1, 1, GL_DEPTH_COMPONENT, GL_DOUBLE, &mouseZ);
-	mouseZ = 0.f; 
+//	mouseZ = 0.f;
 	gluUnProject((GLdouble) point.x, (GLdouble) point.y, mouseZ, modelview, projection, viewport, &x, &y, &z);
 	coord->x = x; coord->y = y; coord->z = z;
 }

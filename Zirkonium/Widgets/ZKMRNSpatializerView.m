@@ -306,7 +306,7 @@
 	dragPosition = ZKMNRSphericalCoordinateToRectangular(center);
 	mouseLocation = [self convertPoint: [theEvent locationInWindow] fromView: nil];
 	[self getOpenGLCoord: &dragPosition forWindowLocation: mouseLocation];
-	center = ZKMNRPlanarCoordinateLiftedToSphere(dragPosition);
+	center = ZKMNRCoordinateProjectedToSphere(dragPosition);
 	self.isShowingInitial ? [_selectedSource setInitialCenter: center] : [_selectedSource setCenter: center];
 
 
@@ -336,7 +336,7 @@
 		center = self.isShowingInitial ? [_selectedSource initialCenter] : [_selectedSource center];
 		dragPosition = ZKMNRSphericalCoordinateToRectangular(center);
 		[self getOpenGLCoord: &dragPosition forWindowLocation: mouseLocation];
-		center = ZKMNRPlanarCoordinateLiftedToSphere(dragPosition);
+		center = ZKMNRCoordinateProjectedToSphere(dragPosition);
 		self.isShowingInitial ? [_selectedSource setInitialCenter: center] : [_selectedSource setCenter: center];
 		
 		[self drawDisplay];
