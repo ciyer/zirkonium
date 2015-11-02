@@ -59,9 +59,9 @@
 	}
 	logger->EndReading();
 	
-	STAssertTrue(hasToken, @"Loging should create a token");
-	STAssertTrue(1 == numberOfTokens, @"Loging once should create exactly one token, not %u tokens", numberOfTokens);
-	STAssertTrue(18 == length, @"Length was %i", length);
+	XCTAssertTrue(hasToken, @"Loging should create a token");
+	XCTAssertTrue(1 == numberOfTokens, @"Loging once should create exactly one token, not %u tokens", numberOfTokens);
+	XCTAssertTrue(18 == length, @"Length was %i", length);
 	
 	// tear down
 	ZKMORLoggerSetIsLogging(NO);
@@ -92,7 +92,7 @@
 	}
 	logger->EndReading();
 	
-	STAssertFalse(hasToken, @"Loging with logger off should not create any token");
+	XCTAssertFalse(hasToken, @"Loging with logger off should not create any token");
 	
 	// tear down
 	ZKMORLoggerSetIsLogging(NO);
@@ -127,9 +127,9 @@
 		}
 		logger->EndReading();
 	
-		STAssertTrue(hasToken, @"Loging should create a token in iteration %u", i);
-		STAssertTrue(1 == numberOfTokens, @"Loging once should create exactly one token in iteration %u", i);
-		STAssertTrue(CFStringGetLength(string) == length, @"Length was %i", length);
+		XCTAssertTrue(hasToken, @"Loging should create a token in iteration %u", i);
+		XCTAssertTrue(1 == numberOfTokens, @"Loging once should create exactly one token in iteration %u", i);
+		XCTAssertTrue(CFStringGetLength(string) == length, @"Length was %i", length);
 		CFRelease(string);
 	}
 	
