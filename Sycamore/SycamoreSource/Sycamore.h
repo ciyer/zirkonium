@@ -30,7 +30,9 @@
 #import <Sycamore/ZKMORMixerMatrix.h>
 #import <Sycamore/ZKMORNoise.h>
 #import <Sycamore/ZKMOROutput.h>
-#import <Sycamore/ZKMORQuickTime.h>
+
+// QuickTime support is currently not working
+// #import <Sycamore/ZKMORQuickTime.h>
 #import <Sycamore/ZKMORRenderSimulator.h>
 #import <Sycamore/ZKMORUtilities.h>
 //#import <Sycamore/ZirkoniumKernelDevice.h>

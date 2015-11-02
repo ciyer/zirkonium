@@ -22,6 +22,7 @@ ZKMDECLCPPT(ZKMORFileWriter)
 ///  Things common to all audio file-based conduits.
 ///
 @interface ZKMORAbstractAudioFile : ZKMORConduit {
+@public
 	NSURL*					_fileURL;
 	FSRef					_fileFSRef;
 	BOOL					_isFileFSRefValid;
@@ -75,6 +76,7 @@ ZKMDECLCPPT(ZKMORFileWriter)
 ///  writing in realtime ZKMORAudioFileRecorder.
 ///
 @interface ZKMORAudioFile : ZKMORAbstractAudioFile {
+@public
 	ZKMCPPT(CAAudioFile)	mAudioFile;
 	SInt64					_currentFrame;
 }
@@ -90,6 +92,7 @@ ZKMDECLCPPT(ZKMORFileWriter)
 ///  for playing back files in realtime.
 ///
 @interface ZKMORAudioFilePlayer : ZKMORAbstractAudioFile {
+@public
 	ZKMCPPT(ZKMORFileReader)	mAudioFileReader;
 }
 
@@ -120,6 +123,7 @@ ZKMDECLCPPT(ZKMORFileWriter)
 ///  Writes audio files in a worker thread. Use this for recording to file in realtime.
 ///
 @interface ZKMORAudioFileRecorder : ZKMORAbstractAudioFile {
+@public
 	ZKMCPPT(ZKMORFileWriter)	mAudioFileWriter;
 }
 
@@ -157,19 +161,6 @@ ZKMDECLCPPT(ZKMORFileWriter)
 
 @end
 
-ZKMOR_C_BEGIN
-
-///
-///  ZKMORAudioFileStruct
-/// 
-///  The struct form of the conduit, for digging into the state of the object (used to
-///  improve performance).
-///
-typedef struct { @defs(ZKMORAudioFile) } ZKMORAudioFileStruct;
-typedef struct { @defs(ZKMORAudioFilePlayer) } ZKMORAudioFilePlayerStruct;
-typedef struct { @defs(ZKMORAudioFileRecorder) } ZKMORAudioFileRecorderStruct;
-
-ZKMOR_C_END
 
 #ifdef __cplusplus
 @interface ZKMORAbstractAudioFile (ZKMORAbstractAudioFileCPP)

@@ -30,9 +30,9 @@ void ZKMORStreamFormatChangeNumberOfChannels(AudioStreamBasicDescription* stream
 
 BOOL ZKMORIsDebuggingOnBus(ZKMORConduitBus* conduitBus, unsigned debugLevel)
 {
-	ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct*)conduitBus;
-	ZKMORConduitStruct* conduitStruct = (ZKMORConduitStruct *)busStruct->_conduit;
-	return (busStruct->_debugLevel & debugLevel) || (conduitStruct->_debugLevel & debugLevel) || (((ZKMORGraphStruct*) conduitStruct->_graph)->_debugLevel & debugLevel);
+	ZKMORConduitBus* busStruct = (ZKMORConduitBus*)conduitBus;
+	ZKMORConduit* conduitStruct = (ZKMORConduit *)busStruct->_conduit;
+	return (busStruct->_debugLevel & debugLevel) || (conduitStruct->_debugLevel & debugLevel) || (((ZKMORGraph*) conduitStruct->_graph)->_debugLevel & debugLevel);
 }
 
 void ZKMORMakeBufferListSilent(AudioBufferList *ioData, AudioUnitRenderActionFlags *ioActionFlags)
@@ -357,7 +357,7 @@ static OSStatus EmptyRenderFunction(	id							SELF,
 	streamFormat.SetCanonical(ZKMORDefaultNumberChannels(), false);
 	streamFormat.mSampleRate = ZKMORDefaultSampleRate();
 
-	ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct *) bus;
+	ZKMORConduitBus* busStruct = (ZKMORConduitBus *) bus;
 	busStruct->_streamFormat = streamFormat;
 }
 

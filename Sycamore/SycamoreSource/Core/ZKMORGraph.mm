@@ -34,14 +34,14 @@ OSStatus	 GraphAudioUnitRenderCallback(	void						* inRefCon,
 	OSStatus err;
 	
 		// render from this node on down
-	ZKMORInputBusStruct* inputBusStruct = (ZKMORInputBusStruct *)inRefCon;
-	ZKMORGraph* graph = ((ZKMORConduitStruct *)inputBusStruct->_conduit)->_graph;
-	ZKMORGraphStruct* graphStruct = (ZKMORGraphStruct*) graph;
+	ZKMORInputBus* inputBusStruct = (ZKMORInputBus *)inRefCon;
+	ZKMORGraph* graph = ((ZKMORConduit *)inputBusStruct->_conduit)->_graph;
+	ZKMORGraph* graphStruct = (ZKMORGraph *) graph;
 	ZKMOROutputBus* outputBus = inputBusStruct->_feederBus;
 	if (outputBus) {
 		int renderDepth = graphStruct->_renderDepth;
 		graphStruct->_renderDepth = renderDepth + 1;
-		err = GraphRenderFromNode(graphStruct, outputBus, ioActionFlags, inTimeStamp, ((ZKMOROutputBusStruct*) outputBus)->_busNumber, inNumberFrames, ioData);
+		err = GraphRenderFromNode(graphStruct, outputBus, ioActionFlags, inTimeStamp, ((ZKMOROutputBus*) outputBus)->_busNumber, inNumberFrames, ioData);
 		graphStruct->_renderDepth = renderDepth;
 	} else {
 		// no follow on node -- memset the buffers to 0 and return
@@ -101,7 +101,7 @@ void GraphPropertyListener(		void*						SELF,
 	}	
 }
 
-static void GraphProcessRenderNotifications(	ZKMORGraphStruct			* graphStruct,
+static void GraphProcessRenderNotifications(	ZKMORGraph			* graphStruct,
 												AudioUnitRenderActionFlags 	* ioActionFlags,
 												const AudioTimeStamp 		* inTimeStamp,
 												UInt32						inOutputBusNumber,
@@ -117,7 +117,7 @@ static void GraphProcessRenderNotifications(	ZKMORGraphStruct			* graphStruct,
 	}
 }										
 
-OSStatus GraphRenderFromNode(	ZKMORGraphStruct			* graphStruct,
+OSStatus GraphRenderFromNode(	ZKMORGraph			* graphStruct,
 								ZKMOROutputBus				* node,
 								AudioUnitRenderActionFlags 	* ioActionFlags,
 								const AudioTimeStamp 		* inTimeStamp,
@@ -125,17 +125,17 @@ OSStatus GraphRenderFromNode(	ZKMORGraphStruct			* graphStruct,
 								UInt32						inNumberFrames,
 								AudioBufferList				* ioData)
 {
-	ZKMOROutputBusStruct* outputStruct = (ZKMOROutputBusStruct*) node;
-	ZKMORConduitStruct* conduitStruct = (ZKMORConduitStruct*) outputStruct->_conduit;
+	ZKMOROutputBus * outputStruct = (ZKMOROutputBus *) node;
+	ZKMORConduit * conduitStruct = (ZKMORConduit *) outputStruct->_conduit;
 	OSStatus err = noErr;
 	int renderDepth = graphStruct->_renderDepth;
 	BOOL providesData = (conduitStruct->_isGraphConnectionOwner) || (conduitStruct->_conduitType & kZKMORConduitType_Source);
 	if (!providesData) { 
 		// recurse to feeder, assumed to be the input bus with the same index
-		ZKMORInputBusStruct* inputStruct = (ZKMORInputBusStruct*) CFArrayGetValueAtIndex((CFArrayRef) conduitStruct->_inputBuses, inOutputBusNumber);
+		ZKMORInputBus* inputStruct = (ZKMORInputBus*) CFArrayGetValueAtIndex((CFArrayRef) conduitStruct->_inputBuses, inOutputBusNumber);
 		ZKMOROutputBus* feeder = inputStruct->_feederBus;
 		graphStruct->_renderDepth = renderDepth + 1;
-		err = GraphRenderFromNode(graphStruct, feeder, ioActionFlags, inTimeStamp, ((ZKMOROutputBusStruct *) feeder)->_busNumber, inNumberFrames, ioData);
+		err = GraphRenderFromNode(graphStruct, feeder, ioActionFlags, inTimeStamp, ((ZKMOROutputBus *) feeder)->_busNumber, inNumberFrames, ioData);
 		graphStruct->_renderDepth = renderDepth;
 		if (err) return err;
 	} 
@@ -177,8 +177,8 @@ OSStatus GraphRenderFunction(	id							SELF,
 								UInt32						inNumberFrames,
 								AudioBufferList				* ioData)
 {
-	ZKMORGraphStruct* graphStruct = (ZKMORGraphStruct*) SELF;
-	ZKMORConduitStruct* headStruct = (ZKMORConduitStruct*) graphStruct->_head;
+	ZKMORGraph* graphStruct = (ZKMORGraph *) SELF;
+	ZKMORConduit* headStruct = (ZKMORConduit *) graphStruct->_head;
 	ZKMOROutputBus* node = (ZKMOROutputBus*) CFArrayGetValueAtIndex((CFArrayRef) headStruct->_outputBuses, inOutputBusNumber);
 	
 	if (!CompareAndSwap(kZKMORGraphState_Free, kZKMORGraphState_Rendering, (UInt32*)&graphStruct->_graphState)) {
@@ -361,7 +361,7 @@ OSStatus GraphRenderFunction(	id							SELF,
 		ZKMORThrow(GraphError, @"Can not patch on graph without a beginPatching call");
 		
 	if (!output) {
-		ZKMORInputBusStruct* inputStruct = (ZKMORInputBusStruct*)input;
+		ZKMORInputBus* inputStruct = (ZKMORInputBus*)input;
 		inputStruct->_feederBus = nil;
 		return;
 	}
@@ -375,8 +375,8 @@ OSStatus GraphRenderFunction(	id							SELF,
 	if (![self preparePatchBus: output into: input error: &error])
 		ZKMORThrow(GraphError, @"Could not match stream formats %@", error);
 		
-	ZKMORInputBusStruct* inputStruct = (ZKMORInputBusStruct*)input;
-	ZKMOROutputBusStruct* outputStruct = (ZKMOROutputBusStruct*)output;	
+	ZKMORInputBus* inputStruct = (ZKMORInputBus*)input;
+	ZKMOROutputBus* outputStruct = (ZKMOROutputBus*)output;	
 	inputStruct->_feederBus = output;
 	outputStruct->_receiverBus = input;
 
@@ -386,8 +386,8 @@ OSStatus GraphRenderFunction(	id							SELF,
 
 - (void)disconnectBus:(ZKMOROutputBus *)output from:(ZKMORInputBus *)input
 {
-	ZKMORInputBusStruct* inputStruct = (ZKMORInputBusStruct*)input;
-	ZKMOROutputBusStruct* outputStruct = (ZKMOROutputBusStruct*)output;
+	ZKMORInputBus* inputStruct = (ZKMORInputBus*)input;
+	ZKMOROutputBus* outputStruct = (ZKMOROutputBus*)output;
 	if (!inputStruct) return;
 	if (inputStruct->_feederBus != output) {
 		ZKMORLogError(kZKMORLogSource_Graph, CFSTR("Cannot disconnect a buses that are not connected %@, %@"), output, input);
@@ -400,7 +400,7 @@ OSStatus GraphRenderFunction(	id							SELF,
 
 - (void)disconnectOutputToInputBus:(ZKMORInputBus *)input
 {
-	ZKMORInputBusStruct* inputStruct = (ZKMORInputBusStruct*)input;
+	ZKMORInputBus* inputStruct = (ZKMORInputBus*)input;
 	ZKMOROutputBus* output = inputStruct->_feederBus;
 	if (!output) return;
 	
@@ -409,25 +409,25 @@ OSStatus GraphRenderFunction(	id							SELF,
 
 - (ZKMOROutputBus *)sourceForInputBus:(ZKMORInputBus *)input 
 { 
-	ZKMORInputBusStruct* inputStruct = (ZKMORInputBusStruct*)input;
+	ZKMORInputBus* inputStruct = (ZKMORInputBus*)input;
 	return inputStruct->_feederBus;
 }
 - (ZKMORInputBus *)destinationForOutputBus:(ZKMOROutputBus *)output 
 { 
-	ZKMOROutputBusStruct* outputStruct = (ZKMOROutputBusStruct*)output;
+	ZKMOROutputBus* outputStruct = (ZKMOROutputBus*)output;
 	return outputStruct->_receiverBus;
 }
 
 - (void)inRenderCallbackPatchBus:(ZKMOROutputBus *)output into:(ZKMORInputBus *)input
 {
 	if (!output) {
-		ZKMORInputBusStruct* inputStruct = (ZKMORInputBusStruct*)input;
+		ZKMORInputBus* inputStruct = (ZKMORInputBus*)input;
 		inputStruct->_feederBus = nil;
 		return;
 	}
 			
-	ZKMORInputBusStruct* inputStruct = (ZKMORInputBusStruct*)input;
-	ZKMOROutputBusStruct* outputStruct = (ZKMOROutputBusStruct*)output;	
+	ZKMORInputBus* inputStruct = (ZKMORInputBus*)input;
+	ZKMOROutputBus* outputStruct = (ZKMOROutputBus*)output;	
 	inputStruct->_feederBus = output;
 	outputStruct->_receiverBus = input;
 
@@ -607,9 +607,9 @@ OSStatus GraphRenderFunction(	id							SELF,
 
 - (void)getStreamFormatForBus:(ZKMORConduitBus *)bus 
 {
-	ZKMORConduitBusStruct* headBus = 
-		(ZKMORConduitBusStruct*) [[self head] outputBusAtIndex: [bus busNumber]];
-	ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct*) bus;		
+	ZKMORConduitBus* headBus = 
+		(ZKMORConduitBus*) [[self head] outputBusAtIndex: [bus busNumber]];
+	ZKMORConduitBus* busStruct = (ZKMORConduitBus*) bus;		
 	busStruct->_streamFormat = headBus->_streamFormat;
 }
 

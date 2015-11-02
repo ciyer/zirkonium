@@ -15,6 +15,7 @@
 ///  Generate white noise
 ///
 @interface ZKMORWhiteNoise : ZKMORConduit {
+@public
 	unsigned	_numberOfOutputBuses;
 	int			_seed;
 }
@@ -37,6 +38,7 @@
 #define PINK_RANDOM_BITS       (24)
 #define PINK_RANDOM_SHIFT      ((sizeof(long)*8)-PINK_RANDOM_BITS)
 @interface ZKMORPinkNoise : ZKMORConduit {
+@public
 	unsigned	_numberOfOutputBuses;
 	int			_seed;
 	

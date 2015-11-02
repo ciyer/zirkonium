@@ -26,6 +26,7 @@ extern NSString* const	ZKMORDeviceOutputDeviceDidDisappearNotification;
 ///
 @class ZKMORGraph, ZKMORAudioDevice, ZKMORAudioUnit, ZKMORDeviceInput;
 @interface ZKMORDeviceOutput : ZKMOROutput  {
+@public
 	ZKMORAudioUnit*		_outputUnit;
 	ZKMORAudioDevice*	_outputDevice;
 	ZKMORDeviceInput*	_deviceInput;
@@ -92,6 +93,7 @@ extern NSString* const	ZKMORDeviceOutputDeviceDidDisappearNotification;
 ///  Gets input from a device. Do not create this yourself, get it from the device output.
 ///
 @interface ZKMORDeviceInput : ZKMORConduit  {
+@public
 	ZKMORDeviceOutput*	_deviceOutput;
 	ZKMORAudioUnit*		_outputUnit;
 }
@@ -134,13 +136,4 @@ extern NSString* const	ZKMORDeviceOutputDeviceDidDisappearNotification;
 @end
 
 
-
-//
-//  ZKMORDeviceOutputStruct
-// 
-//  The struct form of the device output/input, for digging into the state of the object (used to
-//  improve performance)
-//
-typedef struct { @defs(ZKMORDeviceOutput) } ZKMORDeviceOutputStruct;
-typedef struct { @defs(ZKMORDeviceInput) } ZKMORDeviceInputStruct;
 #endif

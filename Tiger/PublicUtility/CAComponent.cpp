@@ -90,6 +90,9 @@ CAComponent::~CAComponent ()
 
 OSStatus		CAComponent::GetResourceVersion (UInt32 &outVersion) const
 {
+	// This is not needed
+	return kResFileNotOpened;
+/*
 	bool versionFound = false;
 	short componentResFileID = kResFileNotOpened;
 	OSStatus result;
@@ -143,6 +146,7 @@ OSStatus		CAComponent::GetResourceVersion (UInt32 &outVersion) const
 		
 home:
 	return result;
+*/
 }
 
 void			CAComponent::Clear ()
@@ -247,7 +251,7 @@ void	_ShowCF (FILE* file, CFStringRef str)
 
 void	CAComponent::Print(FILE* file) const
 {
-	fprintf (file, "CAComponent: 0x%X", int(Comp()));
+	fprintf (file, "CAComponent: 0x%X", (void *)(Comp()));
 	if (mManuName) {
 		fprintf (file, ", Manu:"); _ShowCF (file, mManuName);
 		if (mAUName) fprintf (file, ", Name:"); _ShowCF (file, mAUName);

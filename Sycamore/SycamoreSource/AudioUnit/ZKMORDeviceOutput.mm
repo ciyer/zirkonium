@@ -83,7 +83,7 @@ static OSStatus DeviceRenderFunction(	id							SELF,
 {
 	//NSLog(@"Device Render Func");  
 
-	ZKMORDeviceOutputStruct* deviceOutputStruct = (ZKMORDeviceOutputStruct*) SELF;
+	ZKMORDeviceOutput* deviceOutputStruct = (ZKMORDeviceOutput*) SELF;
 	ZKMORGraph* graph = deviceOutputStruct->_graph;
 	
 	OSStatus err = GraphRenderFunction(graph, ioActionFlags, inTimeStamp, inOutputBusNumber, inNumberFrames, ioData);
@@ -537,8 +537,8 @@ static OSStatus ZKMORDeviceInputRenderFunc(	id							SELF,
 											AudioBufferList				* ioData)
 {
 	//NSLog(@"Device Input Render Func");
-	ZKMORDeviceInputStruct* theInput = (ZKMORDeviceInputStruct*) SELF;
-	ZKMORAudioUnitStruct* theAU = (ZKMORAudioUnitStruct*)theInput->_outputUnit;
+	ZKMORDeviceInput* theInput = (ZKMORDeviceInput*) SELF;
+	ZKMORAudioUnit* theAU = (ZKMORAudioUnit*)theInput->_outputUnit;
 	CAAudioUnitZKM* caAU = theAU->mAudioUnit;
 	return caAU->Render(ioActionFlags, inTimeStamp, 1, inNumberFrames, ioData);
 }
@@ -748,7 +748,7 @@ static OSStatus ZKMORDeviceInputRenderFunc(	id							SELF,
 
 - (void)getStreamFormatForBus:(ZKMORConduitBus *)bus {
 	if (![_deviceOutput isInputEnabled]) return;
-	ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct *)bus;
+	ZKMORConduitBus* busStruct = (ZKMORConduitBus *)bus;
 	busStruct->_streamFormat = [[_outputUnit outputBusAtIndex: 1] streamFormat];
 }
 

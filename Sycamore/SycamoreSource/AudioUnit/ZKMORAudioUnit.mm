@@ -29,7 +29,7 @@ static OSStatus AudioUnitRenderFunction(	id							SELF,
 											UInt32						inNumberFrames,
 											AudioBufferList				* ioData)
 {
-	ZKMORAudioUnitStruct* theAU = (ZKMORAudioUnitStruct*) SELF;
+	ZKMORAudioUnit* theAU = (ZKMORAudioUnit*) SELF;
 	CAAudioUnitZKM* caAU = theAU->mAudioUnit;
 	return caAU->Render(ioActionFlags, inTimeStamp, inOutputBusNumber, inNumberFrames, ioData);
 }
@@ -38,7 +38,7 @@ static OSStatus AudioUnitParameterScheduleFunction(		id								SELF,
 														const AudioUnitParameterEvent	* inParameterEvent,
 														UInt32							inNumParamEvents)
 {
-	ZKMORAudioUnitStruct* theAU = (ZKMORAudioUnitStruct*) SELF;
+	ZKMORAudioUnit* theAU = (ZKMORAudioUnit*) SELF;
 	CAAudioUnitZKM* caAU = theAU->mAudioUnit;
 	return caAU->ScheduleParameterViaListener(inParameterEvent, inNumParamEvents);
 }
@@ -49,7 +49,7 @@ static OSStatus AudioUnitParameterGetFunction(	id						SELF,
 												AudioUnitElement		inElement,
 												Float32					* outValue)	
 {
-	ZKMORAudioUnitStruct* theAU = (ZKMORAudioUnitStruct*) SELF;
+	ZKMORAudioUnit* theAU = (ZKMORAudioUnit*) SELF;
 	CAAudioUnitZKM* caAU = theAU->mAudioUnit;
 	return caAU->GetParameter(inID, inScope, inElement, *outValue);
 }
@@ -61,14 +61,14 @@ static void AudioUnitPropertyListener(	void*						SELF,
 										AudioUnitElement			inElement)
 {
 	ZKMORAudioUnit* theAU = (ZKMORAudioUnit*) SELF;
-	ZKMORAudioUnitStruct* theAUStruct = (ZKMORAudioUnitStruct*) SELF;
+	ZKMORAudioUnit* theAUStruct = (ZKMORAudioUnit*) SELF;
 	
 	// check if the bus initiated this change	
 	NSMutableArray* array;
 		// reach directly into the object and grab what we are looking for
 	array = (kAudioUnitScope_Input == inScope) ? theAUStruct->_inputBuses : theAUStruct->_outputBuses;
 	if (inElement < [array count]) {
-		ZKMORConduitBusStruct* bus = (ZKMORConduitBusStruct*) [array objectAtIndex: inElement];
+		ZKMORConduitBus* bus = (ZKMORConduitBus*) [array objectAtIndex: inElement];
 		if (bus->_isExecutingPropertyChange)
 			return;		
 	}
@@ -175,7 +175,7 @@ static void AudioUnitPropertyListener(	void*						SELF,
 
 - (void)getStreamFormatForBus:(ZKMORConduitBus *)bus 
 {
-	ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct*) bus;
+	ZKMORConduitBus* busStruct = (ZKMORConduitBus*) bus;
 	if (kAudioUnitScope_Input == busStruct->_scope)
 		[self caAudioUnit]->GetInputStreamFormat(	busStruct->_busNumber, 
 													busStruct->_streamFormat);
@@ -189,7 +189,7 @@ static void AudioUnitPropertyListener(	void*						SELF,
 	CAAudioUnitZKM* au = [self caAudioUnit];
 	// pass this call on through
 	try {
-		ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct*) bus;
+		ZKMORConduitBus* busStruct = (ZKMORConduitBus*) bus;
 		if (kAudioUnitScope_Input == busStruct->_scope) {
 			au->SetInputStreamFormat(busStruct->_busNumber, busStruct->_streamFormat);
 			au->GetInputStreamFormat(busStruct->_busNumber, busStruct->_streamFormat);

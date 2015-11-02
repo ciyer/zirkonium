@@ -8,9 +8,6 @@
 
 #import "ZKMORNoise.h"
 
-typedef struct { @defs(ZKMORWhiteNoise) } ZKMORWhiteNoiseStruct;
-typedef struct { @defs(ZKMORPinkNoise) } ZKMORPinkNoiseStruct;
-
 static OSStatus WhiteNoiseRenderFunction(	id							SELF,
 											AudioUnitRenderActionFlags 	* ioActionFlags,
 											const AudioTimeStamp 		* inTimeStamp,
@@ -21,7 +18,7 @@ static OSStatus WhiteNoiseRenderFunction(	id							SELF,
 	if (*ioActionFlags & kAudioUnitRenderAction_PreRender) return noErr;
 	if (*ioActionFlags & kAudioUnitRenderAction_PostRender) return noErr;
 	
-	ZKMORWhiteNoiseStruct* theNoise = (ZKMORWhiteNoiseStruct*) SELF;
+	ZKMORWhiteNoise* theNoise = (ZKMORWhiteNoise*) SELF;
 	int seed = theNoise->_seed;
 	unsigned i, countBuffers = ioData->mNumberBuffers;
 	float maxIntRecip = 1.f / (float) (0x7FFFFFFF);
@@ -69,13 +66,13 @@ static OSStatus WhiteNoiseRenderFunction(	id							SELF,
 @end
 
 // Calculate pseudo-random 32 bit number based on linear congruential method. 
-static unsigned long GenerateRandomNumber(ZKMORPinkNoiseStruct* pink)
+static unsigned long GenerateRandomNumber(ZKMORPinkNoise* pink)
 {
 	pink->_seed = (pink->_seed * 196314165) + 907633515;
 	return pink->_seed;
 }
 
-static float GeneratePinkSample(ZKMORPinkNoiseStruct* pink)
+static float GeneratePinkSample(ZKMORPinkNoise* pink)
 {
 	long newRandom;
 	long sum;
@@ -125,7 +122,7 @@ static OSStatus PinkNoiseRenderFunction(	id							SELF,
 	if (*ioActionFlags & kAudioUnitRenderAction_PreRender) return noErr;
 	if (*ioActionFlags & kAudioUnitRenderAction_PostRender) return noErr;
 	
-	ZKMORPinkNoiseStruct* pink = (ZKMORPinkNoiseStruct*) SELF;
+	ZKMORPinkNoise* pink = (ZKMORPinkNoise*) SELF;
 	
 	unsigned j;
 		// the conduit only uses de-interleaved float PCM buffers

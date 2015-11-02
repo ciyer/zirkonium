@@ -19,6 +19,7 @@ ZKMDECLCPPT(CAAudioUnitZKM)
 ///  A way to inject data from/to an AudioUnit (/AU graph) into/from a ZKMOR graph.
 /// 
 @interface ZKMORAudioUnit : ZKMORConduit {
+@public
 	ZKMCPPT(CAAudioUnitZKM)		mAudioUnit;
 	
 	BOOL			_disposeWhenDone;
@@ -96,19 +97,6 @@ ZKMDECLCPPT(CAAudioUnitZKM)
 @end
 
 
-
-ZKMOR_C_BEGIN
-
-///
-///  ZKMORAudioUnitStruct
-/// 
-///  The struct form of the conduit, for digging into the state of the object (used to
-///  improve performance).
-///
-typedef struct { @defs(ZKMORAudioUnit) } ZKMORAudioUnitStruct;
-
-ZKMOR_C_END
-
 #ifdef __cplusplus
 @interface ZKMORAudioUnit (ZKMORAudioUnitCPP)
 
@@ -118,4 +106,4 @@ ZKMOR_C_END
 #endif
 
 
-#endif __ZKMORAudioUnit_h__
+#endif //__ZKMORAudioUnit_h__

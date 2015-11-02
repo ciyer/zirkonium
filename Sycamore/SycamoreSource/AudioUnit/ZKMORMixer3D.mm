@@ -12,7 +12,7 @@
 #include "CAAudioChannelLayout.h"
 #include "CAAudioUnitZKM.h"
 
-#define BUSAUPTR (((ZKMORAudioUnitStruct*)_conduit)->mAudioUnit)
+#define BUSAUPTR (((ZKMORAudioUnit*)_conduit)->mAudioUnit)
 
 static OSStatus ZKMORMixer3DRenderFunction(	id							SELF,
 											AudioUnitRenderActionFlags 	* ioActionFlags,
@@ -21,7 +21,7 @@ static OSStatus ZKMORMixer3DRenderFunction(	id							SELF,
 											UInt32						inNumberFrames,
 											AudioBufferList				* ioData)
 {
-	ZKMORAudioUnitStruct* theAU = (ZKMORAudioUnitStruct*) SELF;
+	ZKMORAudioUnit* theAU = (ZKMORAudioUnit*) SELF;
 	CAAudioUnitZKM* caAU = theAU->mAudioUnit;
 	OSStatus err = caAU->Render(ioActionFlags, inTimeStamp, inOutputBusNumber, inNumberFrames, ioData);
 	UInt32 i, numberBuffers = ioData->mNumberBuffers;

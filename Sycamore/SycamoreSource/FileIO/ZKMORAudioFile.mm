@@ -25,7 +25,7 @@ static OSStatus AudioFileRenderFunction(	id							SELF,
 	if (*ioActionFlags & kAudioUnitRenderAction_PreRender) return noErr;
 	if (*ioActionFlags & kAudioUnitRenderAction_PostRender) return noErr;
 
-	ZKMORAudioFileStruct* theFile = (ZKMORAudioFileStruct*) SELF;
+	ZKMORAudioFile* theFile = (ZKMORAudioFile*) SELF;
 	try {
 		CAAudioFile* fileCPP = theFile->mAudioFile;
 		if (!fileCPP) {
@@ -76,7 +76,7 @@ static OSStatus AudioFilePlayerRenderFunction(	id							SELF,
 	if (*ioActionFlags & kAudioUnitRenderAction_PreRender) return noErr;
 	if (*ioActionFlags & kAudioUnitRenderAction_PostRender) return noErr;
 	
-	ZKMORAudioFilePlayerStruct* theFile = (ZKMORAudioFilePlayerStruct*) SELF;
+	ZKMORAudioFilePlayer* theFile = (ZKMORAudioFilePlayer*) SELF;
 	UInt32 numberOfFramesDesired = inNumberFrames;
 
 	if (theFile->_debugLevel & kZKMORDebugLevel_PreRender) {
@@ -99,7 +99,7 @@ static OSStatus AudioFilePlayerRenderFunction(	id							SELF,
 	if (*ioActionFlags & kAudioUnitRenderAction_PreRender) return noErr;
 	if (*ioActionFlags & kAudioUnitRenderAction_PostRender) return noErr;
 	
-	ZKMORAudioFilePlayerStruct* theFile = (ZKMORAudioFilePlayerStruct*) SELF;
+	ZKMORAudioFilePlayer* theFile = (ZKMORAudioFilePlayer*) SELF;
 	UInt32 numberOfFramesDesired = inNumberFrames;
 	theFile->mAudioFileReader->PullBuffer(numberOfFramesDesired, ioData);
 	if (numberOfFramesDesired < inNumberFrames) {
@@ -119,7 +119,7 @@ static OSStatus AudioFileWriterRenderFunction(	id							SELF,
 	if (*ioActionFlags & kAudioUnitRenderAction_PreRender) return noErr;
 	if (*ioActionFlags & kAudioUnitRenderAction_PostRender) return noErr;
 	
-	ZKMORAudioFileRecorderStruct* theFile = (ZKMORAudioFileRecorderStruct*) SELF;
+	ZKMORAudioFileRecorder* theFile = (ZKMORAudioFileRecorder*) SELF;
 	theFile->mAudioFileWriter->PushBuffer(inNumberFrames, ioData);
 
 	return noErr;
@@ -363,7 +363,7 @@ static OSStatus AudioFileWriterRenderFunction(	id							SELF,
 
 - (void)getStreamFormatForBus:(ZKMORConduitBus *)bus
 {
-	ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct *) bus;
+	ZKMORConduitBus* busStruct = (ZKMORConduitBus *) bus;
 	busStruct->_streamFormat = mAudioFile->GetClientDataFormat();
 }
 
@@ -477,7 +477,7 @@ static OSStatus AudioFileWriterRenderFunction(	id							SELF,
 
 - (void)getStreamFormatForBus:(ZKMORConduitBus *)bus
 {
-	ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct *) bus;
+	ZKMORConduitBus* busStruct = (ZKMORConduitBus *) bus;
 	busStruct->_streamFormat = mAudioFileReader->GetClientDataFormat();
 }
 
@@ -701,7 +701,7 @@ static OSStatus AudioFileWriterRenderFunction(	id							SELF,
 
 - (void)getStreamFormatForBus:(ZKMORConduitBus *)bus
 {
-	ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct *) bus;
+	ZKMORConduitBus* busStruct = (ZKMORConduitBus *) bus;
 	if (!_fileURL) 
 		[super getStreamFormatForBus: bus];
 	else

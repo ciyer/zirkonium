@@ -167,13 +167,13 @@ static OSStatus QTPullAudioFunction(	void						* SELF,
 
 - (void)getStreamFormatForBus:(ZKMORConduitBus*)bus 
 {
-	ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct*) bus;
+	ZKMORConduitBus* busStruct = (ZKMORConduitBus*) bus;
 	mFormatConverter->GetOutputStreamFormat(0, busStruct->_streamFormat);
 }
 
 - (void)setStreamFormatForBus:(ZKMORConduitBus*)bus 
 {
-	ZKMORConduitBusStruct* busStruct = (ZKMORConduitBusStruct*) bus;
+	ZKMORConduitBus* busStruct = (ZKMORConduitBus*) bus;
 	try {
 		mFormatConverter->SetOutputStreamFormat(0, busStruct->_streamFormat);
 	} catch (CAXException& e) {

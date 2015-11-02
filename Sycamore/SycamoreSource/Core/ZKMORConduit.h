@@ -9,7 +9,7 @@
 //
 //  For performance purposes, certain functions on Conduits are defined as
 //  C functions which can be called directly, bypassing the Obj-C method look-up
-//  mechanism.
+//  mechanism. For this reason, the ivars are public.
 //
 //  The functions which fall into this catagory are:
 // 
@@ -103,6 +103,7 @@ enum
 ///
 @class ZKMORConduitBus, ZKMORInputBus, ZKMOROutputBus, ZKMORGraph; 
 @interface ZKMORConduit : NSObject <NSCopying, NSCoding> {
+@public
 	//  Status State
 	unsigned				_conduitType;		
 	BOOL					_isInitialized;
@@ -245,6 +246,7 @@ enum
 ///  the parent conduit is changed.
 ///
 @interface ZKMORConduitBus : NSObject {
+@public
 	//  Bus State
 	ZKMORConduit*					_conduit;
 	AudioStreamBasicDescription		_streamFormat;
@@ -310,6 +312,7 @@ enum
 ///  The bus that accepts audio data.
 ///
 @interface ZKMORInputBus : ZKMORConduitBus {
+@public
 	ZKMOROutputBus*		_feederBus;
 }
 
@@ -338,6 +341,7 @@ enum
 ///  The bus that produces audio data.
 ///
 @interface ZKMOROutputBus : ZKMORConduitBus {
+@public
 	ZKMORInputBus*		_receiverBus;
 }
 
@@ -353,6 +357,7 @@ enum
 ///  you may need to re-write your functions to be pure C or C++.
 ///
 @interface ZKMORAbstractMethodCallConduit : ZKMORConduit {
+@public
 	IMP		_invokeFunctionPointer;
 
 }
@@ -374,20 +379,6 @@ enum
 Float64		ZKMORDefaultSampleRate();
 unsigned	ZKMORDefaultNumberChannels();
 unsigned	ZKMORDefaultMaxFramesPerSlice();
-
-
-
-///
-///  ZKMORConduitStruct
-/// 
-///  The struct form of the conduit, for digging into the state of the object (used to
-///  improve performance)
-///
-typedef struct { @defs(ZKMORConduit) } ZKMORConduitStruct;
-typedef struct { @defs(ZKMORConduitBus) } ZKMORConduitBusStruct;
-typedef struct { @defs(ZKMORInputBus) } ZKMORInputBusStruct;
-typedef struct { @defs(ZKMOROutputBus) } ZKMOROutputBusStruct;
-typedef struct { @defs(ZKMORAbstractMethodCallConduit) } ZKMORAbstractMethodCallConduitStruct;
 
 
 

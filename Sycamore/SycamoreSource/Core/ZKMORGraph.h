@@ -87,6 +87,7 @@ enum
 ///
 @class ZKMORAudioUnit;
 @interface ZKMORGraph : ZKMORConduit <ZKMORStarting> {
+@public
 		// graph properties
 	BOOL			_isRunning;
 	Float64			_graphSampleRate;
@@ -184,13 +185,6 @@ enum
 
 @end
 
-///
-///  ZKMORGraphStruct
-/// 
-///  The struct form of the graph, for digging into the state of the object (used to
-///  improve performance)
-///
-typedef struct { @defs(ZKMORGraph) } ZKMORGraphStruct;
 
 // Internal C Functions 
 OSStatus	GraphAudioUnitRenderCallback(	void* inRefCon, AudioUnitRenderActionFlags* ioActionFlags, 
@@ -203,7 +197,7 @@ void GraphPropertyListener(		void* SELF, AudioUnit ci, AudioUnitPropertyID inID,
 								AudioUnitElement inElement);
 
 
-OSStatus GraphRenderFromNode(	ZKMORGraphStruct			* graphStruct,
+OSStatus GraphRenderFromNode(	ZKMORGraph					* graphStruct,
 								ZKMOROutputBus				* node,
 								AudioUnitRenderActionFlags 	* ioActionFlags,
 								const AudioTimeStamp 		* inTimeStamp,

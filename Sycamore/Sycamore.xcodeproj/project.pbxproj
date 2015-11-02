@@ -97,9 +97,7 @@
 		3652A5570AAC9803003D3818 /* Sycamore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Sycamore.framework */; };
 		3652A5580AAC9804003D3818 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 361AC9FA0A9E24A900E9C876 /* AudioToolbox.framework */; };
 		3654839A0ABAD8EC00121C98 /* ZKMORQuickTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 365483970ABAD8EC00121C98 /* ZKMORQuickTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3654839B0ABAD8EC00121C98 /* ZKMORQuickTime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 365483980ABAD8EC00121C98 /* ZKMORQuickTime.mm */; };
 		365483BA0ABADB4900121C98 /* ZKMORQTReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 365483B70ABADB4900121C98 /* ZKMORQTReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		365483BB0ABADB4900121C98 /* ZKMORQTReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 365483B80ABADB4900121C98 /* ZKMORQTReader.mm */; };
 		365484A90ABAF2A100121C98 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3654849B0ABAF2A100121C98 /* QTKit.framework */; };
 		365484AA0ABAF2A100121C98 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3654849B0ABAF2A100121C98 /* QTKit.framework */; };
 		365484D80ABAF2CB00121C98 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365484B50ABAF2CB00121C98 /* QuickTime.framework */; };
@@ -164,8 +162,6 @@
 		36C0D08E0AB5C3FE008EC728 /* ZKMORFileReaderTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36C0D08D0AB5C3FE008EC728 /* ZKMORFileReaderTest.mm */; };
 		36E5F3160AD684F400A0B6CE /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36E5F3140AD684F400A0B6CE /* CADebugMacros.cpp */; };
 		36E5F3170AD684F400A0B6CE /* CADebugMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E5F3150AD684F400A0B6CE /* CADebugMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36E8DE200ABB06E700EF0F9F /* ZKMORQTPlayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E8DE1D0ABB06E700EF0F9F /* ZKMORQTPlayerTest.m */; };
-		36E8DE790ABB08E200EF0F9F /* ZKMORQTPlayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E8DE1D0ABB06E700EF0F9F /* ZKMORQTPlayerTest.m */; };
 		36EC4FED0A9D9970007DF698 /* ZKMORAudioHardwareSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 36EC4FEB0A9D9970007DF698 /* ZKMORAudioHardwareSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36EC4FEE0A9D9970007DF698 /* ZKMORAudioHardwareSystem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36EC4FEC0A9D9970007DF698 /* ZKMORAudioHardwareSystem.mm */; };
 		36EC50360A9D9F16007DF698 /* ZKMORUtilitiesTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36EC50330A9D9F16007DF698 /* ZKMORUtilitiesTest.mm */; };
@@ -248,7 +244,7 @@
 		3619079F0AA885F700D65985 /* ZKMORZone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZKMORZone.cpp; sourceTree = "<group>"; };
 		361907AA0AA888DC00D65985 /* ZKMMPQueue.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ZKMMPQueue.h; sourceTree = "<group>"; };
 		361AC8D10A9E14A400E9C876 /* ZKMORAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORAudioUnit.h; sourceTree = "<group>"; };
-		361AC8D20A9E14A400E9C876 /* ZKMORAudioUnit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKMORAudioUnit.mm; sourceTree = "<group>"; };
+		361AC8D20A9E14A400E9C876 /* ZKMORAudioUnit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = ZKMORAudioUnit.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		361AC94E0A9E1EE500E9C876 /* CAAudioUnitZKM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAAudioUnitZKM.h; sourceTree = "<group>"; };
 		361AC94F0A9E1EE500E9C876 /* CAAudioUnitZKM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAAudioUnitZKM.cpp; sourceTree = "<group>"; };
 		361AC9EC0A9E248300E9C876 /* CAAudioUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = CAAudioUnit.cpp; sourceTree = "<group>"; };
@@ -263,7 +259,7 @@
 		361ACA740A9E261800E9C876 /* CAAudioChannelLayout.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CAAudioChannelLayout.h; sourceTree = "<group>"; };
 		361ACA750A9E261900E9C876 /* CAAudioChannelLayoutObject.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = CAAudioChannelLayoutObject.cpp; sourceTree = "<group>"; };
 		361ACA8A0A9E266B00E9C876 /* ZKMORMixer3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORMixer3D.h; sourceTree = "<group>"; };
-		361ACA8B0A9E266B00E9C876 /* ZKMORMixer3D.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKMORMixer3D.mm; sourceTree = "<group>"; };
+		361ACA8B0A9E266B00E9C876 /* ZKMORMixer3D.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = ZKMORMixer3D.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		361ACB4A0A9E2D6B00E9C876 /* ZKMORMixer3DTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORMixer3DTest.h; sourceTree = "<group>"; };
 		361ACB4B0A9E2D6B00E9C876 /* ZKMORMixer3DTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMORMixer3DTest.m; sourceTree = "<group>"; };
 		361C34170AA73B6E008A5B73 /* ZKMORDeviceOutputTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORDeviceOutputTest.h; sourceTree = "<group>"; };
@@ -312,7 +308,7 @@
 		3652A5380AAC96EA003D3818 /* CABufferList.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CABufferList.h; sourceTree = "<group>"; };
 		3652A54D0AAC97E7003D3818 /* SycamoreFileExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SycamoreFileExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		365483970ABAD8EC00121C98 /* ZKMORQuickTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORQuickTime.h; sourceTree = "<group>"; };
-		365483980ABAD8EC00121C98 /* ZKMORQuickTime.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKMORQuickTime.mm; sourceTree = "<group>"; };
+		365483980ABAD8EC00121C98 /* ZKMORQuickTime.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = ZKMORQuickTime.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		365483B70ABADB4900121C98 /* ZKMORQTReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORQTReader.h; sourceTree = "<group>"; };
 		365483B80ABADB4900121C98 /* ZKMORQTReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKMORQTReader.mm; sourceTree = "<group>"; };
 		3654849B0ABAF2A100121C98 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
@@ -321,7 +317,7 @@
 		366086BA0A9F2B30006FDB9A /* ZKMORMixerMatrixTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORMixerMatrixTest.h; sourceTree = "<group>"; };
 		366086BB0A9F2B30006FDB9A /* ZKMORMixerMatrixTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMORMixerMatrixTest.m; sourceTree = "<group>"; };
 		366088330A9F367E006FDB9A /* ZKMORGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORGraph.h; sourceTree = "<group>"; };
-		366088340A9F367E006FDB9A /* ZKMORGraph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKMORGraph.mm; sourceTree = "<group>"; };
+		366088340A9F367E006FDB9A /* ZKMORGraph.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = ZKMORGraph.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3662E1DE0ABB0E15005FF495 /* ZKMORThreadBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORThreadBridge.h; sourceTree = "<group>"; };
 		3662E1DF0ABB0E15005FF495 /* ZKMORThreadBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZKMORThreadBridge.cpp; sourceTree = "<group>"; };
 		366EB76B0AD1402C00350D69 /* ZKMORAudioFileOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORAudioFileOutput.h; sourceTree = "<group>"; };
@@ -330,7 +326,7 @@
 		366EB9D10AD1737200350D69 /* ZKMORAudioFileOutputTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMORAudioFileOutputTest.m; sourceTree = "<group>"; };
 		366FA1DF0AB83FD600F33335 /* SycamoreOverview.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SycamoreOverview.txt; sourceTree = "<group>"; };
 		3678D9880AA606A7002BA3BB /* ZKMORDeviceOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORDeviceOutput.h; sourceTree = "<group>"; };
-		3678D9890AA606A7002BA3BB /* ZKMORDeviceOutput.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKMORDeviceOutput.mm; sourceTree = "<group>"; };
+		3678D9890AA606A7002BA3BB /* ZKMORDeviceOutput.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = ZKMORDeviceOutput.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		367A94580AADE5940014AE32 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
 		36841DCF0AD3B35900D04417 /* SycamoreListAUExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SycamoreListAUExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		36841DF20AD3B40600D04417 /* ZKMORListAUExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMORListAUExample.m; sourceTree = "<group>"; };
@@ -344,7 +340,7 @@
 		369446600A9C874C00770B32 /* ZKMORLoggerCPP.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = ZKMORLoggerCPP.cpp; sourceTree = "<group>"; };
 		369446610A9C874C00770B32 /* ZKMORLoggerCPP.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ZKMORLoggerCPP.h; sourceTree = "<group>"; };
 		3694467A0A9C882900770B32 /* ZKMORConduit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORConduit.h; sourceTree = "<group>"; };
-		3694467B0A9C882900770B32 /* ZKMORConduit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKMORConduit.mm; sourceTree = "<group>"; };
+		3694467B0A9C882900770B32 /* ZKMORConduit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = ZKMORConduit.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		369447280A9C98F100770B32 /* ZKMORUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORUtilities.h; sourceTree = "<group>"; };
 		369447290A9C98F100770B32 /* ZKMORUtilities.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKMORUtilities.mm; sourceTree = "<group>"; };
 		369447730A9C9F0300770B32 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
@@ -399,6 +395,7 @@
 		36EE51F90BFC911200F09AB4 /* ZKMORAudioUnitParameterSchedulerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORAudioUnitParameterSchedulerTest.h; sourceTree = "<group>"; };
 		36EE51FA0BFC911200F09AB4 /* ZKMORAudioUnitParameterSchedulerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMORAudioUnitParameterSchedulerTest.m; sourceTree = "<group>"; };
 		701EAC25177A7F240041BDBB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		709276581BE7637B00028BB1 /* ConditionalMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConditionalMacros.h; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* Sycamore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sycamore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -757,6 +754,7 @@
 				369447750A9C9F1300770B32 /* CAStreamBasicDescription.cpp */,
 				363E1A400AADE3D900753BF3 /* CAXException.h */,
 				363E1A3F0AADE3D900753BF3 /* CAXException.cpp */,
+				709276581BE7637B00028BB1 /* ConditionalMacros.h */,
 			);
 			name = PublicUtility;
 			path = ../Tiger/PublicUtility;
@@ -971,7 +969,7 @@
 			name = SycamoreTest;
 			productName = SycamoreTest;
 			productReference = 36944A4D0A9CBFF100770B32 /* SycamoreTest.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		36EC508C0A9DA123007DF698 /* SycamoreTestTool */ = {
 			isa = PBXNativeTarget;
@@ -1120,7 +1118,6 @@
 				36BC0E880AB879F900BBEC19 /* ZKMORAudioFileTest.m in Sources */,
 				3626EAAD0ABAA15C007633F1 /* ZKMORAudioFilePlayerTest.m in Sources */,
 				3626EBE70ABAB977007633F1 /* ZKMORAudioFileRecorderTest.m in Sources */,
-				36E8DE790ABB08E200EF0F9F /* ZKMORQTPlayerTest.m in Sources */,
 				36A5DF390ABEF515006B08DA /* ZKMORAudioUnitMirrorTest.m in Sources */,
 				366EB9D30AD1737200350D69 /* ZKMORAudioFileOutputTest.m in Sources */,
 				3621B2570B6F9BD600729026 /* ZKMORAudioFilePlayerParallelTest.mm in Sources */,
@@ -1146,7 +1143,6 @@
 				36BC0E870AB879F900BBEC19 /* ZKMORAudioFileTest.m in Sources */,
 				3626EAAC0ABAA15C007633F1 /* ZKMORAudioFilePlayerTest.m in Sources */,
 				3626EBE60ABAB977007633F1 /* ZKMORAudioFileRecorderTest.m in Sources */,
-				36E8DE200ABB06E700EF0F9F /* ZKMORQTPlayerTest.m in Sources */,
 				36A5DF380ABEF515006B08DA /* ZKMORAudioUnitMirrorTest.m in Sources */,
 				366EB9D20AD1737200350D69 /* ZKMORAudioFileOutputTest.m in Sources */,
 				3621B2560B6F9BD600729026 /* ZKMORAudioFilePlayerParallelTest.mm in Sources */,
@@ -1195,8 +1191,6 @@
 				363E19C80AADD8B100753BF3 /* CAAudioFile.cpp in Sources */,
 				363E1A420AADE3D900753BF3 /* CAXException.cpp in Sources */,
 				36AF31A20AB86AB900E650F3 /* ZKMORAudioFile.mm in Sources */,
-				3654839B0ABAD8EC00121C98 /* ZKMORQuickTime.mm in Sources */,
-				365483BB0ABADB4900121C98 /* ZKMORQTReader.mm in Sources */,
 				3662E1E10ABB0E15005FF495 /* ZKMORThreadBridge.cpp in Sources */,
 				36A5DE390ABECD2A006B08DA /* ZKMORAudioUnitMirror.m in Sources */,
 				36A5DF5B0ABEF617006B08DA /* ZKMORAudioUnitSystem.mm in Sources */,
@@ -1302,12 +1296,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPLUSPLUSFLAGS = "-DCAAF_USE_EXTAUDIOFILE=0";
 				PREBINDING = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
 				SYMROOT = ../build;
-				VALID_ARCHS = i386;
 			};
 			name = Debug;
 		};
@@ -1318,12 +1310,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPLUSPLUSFLAGS = "-DCAAF_USE_EXTAUDIOFILE=0";
 				PREBINDING = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
 				SYMROOT = ../build;
-				VALID_ARCHS = i386;
 			};
 			name = Release;
 		};
@@ -1477,6 +1467,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(value)",
 					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+					"$(inherited)",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -1490,12 +1481,9 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
-					"-framework",
-					SenTestingKit,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SycamoreTest;
-				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
 			name = Debug;
@@ -1508,6 +1496,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(value)",
 					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+					"$(inherited)",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -1519,12 +1508,9 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Cocoa,
-					"-framework",
-					SenTestingKit,
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = SycamoreTest;
-				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
 			name = Release;

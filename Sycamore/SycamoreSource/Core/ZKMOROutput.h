@@ -34,6 +34,7 @@
 ///
 @class ZKMORGraph, ZKMORClock;
 @interface ZKMOROutput : NSObject <ZKMORStarting> {
+@public
 	ZKMORGraph*		_graph;
 	ZKMORClock*		_clock;
 	BOOL			_isRunning;

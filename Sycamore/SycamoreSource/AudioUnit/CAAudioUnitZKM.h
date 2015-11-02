@@ -71,7 +71,7 @@ public:
 
 	ComponentResult			RemovePropertyListener (AudioUnitPropertyID inID, AudioUnitPropertyListenerProc inProc)
 							{
-								return AudioUnitRemovePropertyListener (AU(), inID, inProc);
+								return AudioUnitRemovePropertyListenerWithUserData (AU(), inID, inProc, NULL);
 							}
 							
 	// Parameters
