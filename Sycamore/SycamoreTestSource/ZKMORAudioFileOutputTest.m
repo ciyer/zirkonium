@@ -30,7 +30,7 @@
 	memset(&formatDesc, 0, sizeof(formatDesc));
 	[ZKMORAudioFileRecorder getAIFFInt16Format: &formatDesc channels: 2];
 	[fileOutput setFilePath: [self scratchTestFilePath] fileType: kAudioFileAIFFType dataFormat: formatDesc error: &error];
-	STAssertNil(error, @"Set file path failed %@", error);
+	XCTAssertNil(error, @"Set file path failed %@", error);
 	if (error) {
 		[self deleteScratchFile];
 		return;
@@ -57,7 +57,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file player was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file player was silent");
 	
 	[fileOutput stop];
 	[self verifyScratchFile];

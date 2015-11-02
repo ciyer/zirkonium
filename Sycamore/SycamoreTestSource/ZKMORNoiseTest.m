@@ -46,11 +46,11 @@
 	
 	// verify the default stream format
 	AudioStreamBasicDescription streamFormat = [[whiteNoise outputBusAtIndex: 0] streamFormat];
-	STAssertEquals(streamFormat.mSampleRate, ZKMORDefaultSampleRate(), @"Sample rate should be the default");
-	STAssertEquals(streamFormat.mChannelsPerFrame, (UInt32) ZKMORDefaultNumberChannels(), @"Number of channels should be the default");
+	XCTAssertEqual(streamFormat.mSampleRate, ZKMORDefaultSampleRate(), @"Sample rate should be the default");
+	XCTAssertEqual(streamFormat.mChannelsPerFrame, (UInt32) ZKMORDefaultNumberChannels(), @"Number of channels should be the default");
 	
-	STAssertNoThrow([whiteNoise initialize], @"Initialize should not throw an exception");
-	STAssertNoThrow([whiteNoise uninitialize], @"Uninitialize should not throw an exception");
+	XCTAssertNoThrow([whiteNoise initialize], @"Initialize should not throw an exception");
+	XCTAssertNoThrow([whiteNoise uninitialize], @"Uninitialize should not throw an exception");
 }
 
 - (void)testWhiteNoise
@@ -80,7 +80,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio filePlayer was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the white noise was silent");
 	
 	[graph stop];
 }
@@ -112,7 +112,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio filePlayer was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the pink noise was silent (%.2f db)", postPeakHoldLevelPower);
 	
 	[graph stop];
 }

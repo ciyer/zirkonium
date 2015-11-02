@@ -6,10 +6,10 @@
 //  Copyright 2006 C. Ramakrishnan/ZKM. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 
-@interface ZKMORAudioUnitMirrorTest : SenTestCase {
+@interface ZKMORAudioUnitMirrorTest : XCTestCase {
 
 }
 

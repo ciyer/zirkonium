@@ -6,11 +6,11 @@
 //  Copyright 2006 C. Ramakrishnan/ZKM. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import <Sycamore/Sycamore.h>
 
 
-@interface ZKMORAbstractProcessorTest : SenTestCase {
+@interface ZKMORAbstractProcessorTest : XCTestCase {
 		//  Graph Objects
 	ZKMORGraph*				graph;
 	ZKMORWhiteNoise*		noise;

@@ -4,30 +4,35 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Sycamore Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Sycamore.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>0</integer>
 		</dict>
 		<key>SycamoreFileExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>3</integer>
 		</dict>
 		<key>SycamoreListAUExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>4</integer>
 		</dict>
 		<key>SycamoreTestTool.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>1</integer>
 		</dict>
 		<key>SycmoreDebugTest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -53,6 +58,11 @@
 			<true/>
 		</dict>
 		<key>36EC508C0A9DA123007DF698</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7092765C1BE76F6A00028BB1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

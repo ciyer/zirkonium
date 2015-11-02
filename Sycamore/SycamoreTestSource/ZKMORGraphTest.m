@@ -78,14 +78,14 @@ static OSStatus GraphTestRenderNotification(	id								SELF,
 //	float postAveragePower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postAveragePower];
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		
-	STAssertNil([simulator error], @"Pulling on the graph encountered an error %@", [simulator error]);
+	XCTAssertNil([simulator error], @"Pulling on the graph encountered an error %@", [simulator error]);
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the graph was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the graph was silent");
 	
-	STAssertTrue(wasPreRenderCalled, @"The pre-render function was never called");	
-	STAssertTrue(wasPostRenderCalled, @"The post-render function was never called");
-	STAssertTrue(wereNotificationsCalledInOrder, @"The render notifications were not called in order");
-	STAssertFalse(wereNotificationsCalledAfterRemoval, @"The render notifications were called after being removed");
+	XCTAssertTrue(wasPreRenderCalled, @"The pre-render function was never called");	
+	XCTAssertTrue(wasPostRenderCalled, @"The post-render function was never called");
+	XCTAssertTrue(wereNotificationsCalledInOrder, @"The render notifications were not called in order");
+	XCTAssertFalse(wereNotificationsCalledAfterRemoval, @"The render notifications were called after being removed");
 }
 
 - (void)testReading
@@ -154,9 +154,9 @@ static OSStatus GraphTestRenderNotification(	id								SELF,
 		[graph initialize];		
 	[graph endPatching];
 	
-	STAssertTrue([noise retainCount] == 2, @"The noise's retain count should be 2 not %u", [noise retainCount]);	
+	XCTAssertTrue([noise retainCount] == 2, @"The noise's retain count should be 2 not %u", [noise retainCount]);	
 	[graph removeDependentConduit: noise];	
-	STAssertTrue([noise retainCount] == 1, @"The noise's retain count should be 1 not %u", [noise retainCount]);
+	XCTAssertTrue([noise retainCount] == 1, @"The noise's retain count should be 1 not %u", [noise retainCount]);
 	
 	[simulator setConduit: graph];
 	[graph initialize];
@@ -174,14 +174,14 @@ static OSStatus GraphTestRenderNotification(	id								SELF,
 //	float postAveragePower = [mixer postAveragePowerForOutput: 0];
 	float postPeakHoldLevelPower = [mixer postPeakHoldLevelPowerForOutput: 0];
 	
-	STAssertNil([simulator error], @"Pulling on the graph encountered an error %@", [simulator error]);
+	XCTAssertNil([simulator error], @"Pulling on the graph encountered an error %@", [simulator error]);
 		// make sure that the peak level was greater than silence
-	STAssertFalse(postPeakHoldLevelPower > -120.f, @"The output of the graph should have been silent");
+	XCTAssertFalse(postPeakHoldLevelPower > -120.f, @"The output of the graph should have been silent");
 	
-	STAssertTrue(wasPreRenderCalled, @"The pre-render function was never called");	
-	STAssertTrue(wasPostRenderCalled, @"The post-render function was never called");
-	STAssertTrue(wereNotificationsCalledInOrder, @"The render notifications were not called in order");
-	STAssertFalse(wereNotificationsCalledAfterRemoval, @"The render notifications were called after being removed");
+	XCTAssertTrue(wasPreRenderCalled, @"The pre-render function was never called");	
+	XCTAssertTrue(wasPostRenderCalled, @"The post-render function was never called");
+	XCTAssertTrue(wereNotificationsCalledInOrder, @"The render notifications were not called in order");
+	XCTAssertFalse(wereNotificationsCalledAfterRemoval, @"The render notifications were called after being removed");
 
 
 	// stop playing
@@ -210,13 +210,13 @@ static OSStatus GraphTestRenderNotification(	id								SELF,
 	[myGraph endPatching];
 
 		// the retain count for the mixer and noise should be incremented, plus they are dependents of the graph
-	STAssertTrue([myMixer retainCount] == 2, @"The mixer's retain count should be 2 not %i", [myMixer retainCount]);
-	STAssertTrue([myNoise retainCount] == 2, @"The noise's retain count should be 2 not %i", [myNoise retainCount]);
+	XCTAssertTrue([myMixer retainCount] == 2, @"The mixer's retain count should be 2 not %i", [myMixer retainCount]);
+	XCTAssertTrue([myNoise retainCount] == 2, @"The noise's retain count should be 2 not %i", [myNoise retainCount]);
 
 	[myGraph release];
 	
-	STAssertTrue([myMixer retainCount] == 1, @"The mixer's retain count should be 1 not %i", [myMixer retainCount]);
-	STAssertTrue([myNoise retainCount] == 1, @"The noise's retain count should be 1 not %i", [myNoise retainCount]);
+	XCTAssertTrue([myMixer retainCount] == 1, @"The mixer's retain count should be 1 not %i", [myMixer retainCount]);
+	XCTAssertTrue([myNoise retainCount] == 1, @"The noise's retain count should be 1 not %i", [myNoise retainCount]);
 
 
 	[myMixer release];
@@ -275,11 +275,11 @@ static OSStatus GraphTestRenderNotification(	id								SELF,
 	[simulator simulateNumCalls: 100 numFrames: 512 bus: 0];
 	[self verifyRenderingState];
 	
-	STAssertEquals(48000.0, [[mixer outputBusAtIndex: 0] sampleRate], 
+	XCTAssertEqual(48000.0, [[mixer outputBusAtIndex: 0] sampleRate], 
 		@"The Mixer's output sample rate is %.2f, not 48000.0", [[mixer outputBusAtIndex: 0] sampleRate]);
-	STAssertEquals(48000.0, [[mixer inputBusAtIndex: 0] sampleRate], 
+	XCTAssertEqual(48000.0, [[mixer inputBusAtIndex: 0] sampleRate], 
 		@"The Mixer's input sample rate is %.2f, not 48000.0", [[mixer inputBusAtIndex: 0] sampleRate]);
-	STAssertEquals(48000.0, [[noise outputBusAtIndex: 0] sampleRate], 
+	XCTAssertEqual(48000.0, [[noise outputBusAtIndex: 0] sampleRate], 
 		@"The Reader's output sample rate is %.2f, not 48000.0", [[noise outputBusAtIndex: 0] sampleRate]);	
 
 	// stop playing
@@ -308,7 +308,7 @@ static OSStatus GraphTestRenderNotification(	id								SELF,
 	[graph endPatching];
 	[simulator setConduit: graph];
 	
-	STAssertEquals((unsigned) 2, [[graph outputBusAtIndex: 0] numberOfChannels], 
+	XCTAssertEqual((unsigned) 2, [[graph outputBusAtIndex: 0] numberOfChannels], 
 		@"The graph's output number of channels is %u, not 2", [[graph outputBusAtIndex: 0] numberOfChannels]);
 	
 	[graph uninitialize];
@@ -320,7 +320,7 @@ static OSStatus GraphTestRenderNotification(	id								SELF,
 	
 	[graph initialize];
 	
-	STAssertEquals((unsigned) 1, [[graph outputBusAtIndex: 0] numberOfChannels], 
+	XCTAssertEqual((unsigned) 1, [[graph outputBusAtIndex: 0] numberOfChannels], 
 		@"The graph's output number of channels is %u, not 1", [[graph outputBusAtIndex: 0] numberOfChannels]);
 	
 	// the mixer starts out with all levels at 0 -- set them to something useful
@@ -369,9 +369,9 @@ static OSStatus GraphTestRenderNotification(	id								SELF,
 		
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		
-	STAssertNil([simulator error], @"Pulling on the graph encountered an error %@", [simulator error]);
+	XCTAssertNil([simulator error], @"Pulling on the graph encountered an error %@", [simulator error]);
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the graph was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the graph was silent");
 	
 
 	// stop playing

@@ -16,9 +16,9 @@
 {
 	ZKMORConduit* conduit = [[ZKMORConduit alloc] init];
 
-	STAssertNotNil(conduit, @"Conduit should not be nil");
-	STAssertEquals([conduit numberOfInputBuses], (unsigned) 1, @"Conduit should have 1 input bus");
-	STAssertEquals([conduit numberOfOutputBuses], (unsigned) 1, @"Conduit should have 1 output bus");	
+	XCTAssertNotNil(conduit, @"Conduit should not be nil");
+	XCTAssertEqual([conduit numberOfInputBuses], (unsigned) 1, @"Conduit should have 1 input bus");
+	XCTAssertEqual([conduit numberOfOutputBuses], (unsigned) 1, @"Conduit should have 1 output bus");	
 }
 
 @end

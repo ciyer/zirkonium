@@ -41,7 +41,7 @@
 	[graph endPatching];
 	
 	[deviceOutput setGraph: graph];
-	STAssertTrue([graph retainCount] == 2, @"The graph's retain count should be 2 not %u", [graph retainCount]);
+	XCTAssertTrue([graph retainCount] == 2, @"The graph's retain count should be 2 not %u", [graph retainCount]);
 
 	// the mixer starts out with all levels at 0 -- set them to something useful
 	[mixer setToCanonicalLevels];
@@ -57,9 +57,9 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		
-	STAssertTrue([deviceOutput lastError] == noErr, @"Running output encountered an error %u", [deviceOutput lastError]);
+	XCTAssertTrue([deviceOutput lastError] == noErr, @"Running output encountered an error %u", [deviceOutput lastError]);
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the graph was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the graph was silent");
 }
 
 - (void)testInput
@@ -99,9 +99,9 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		
-	STAssertTrue([deviceOutput lastError] == noErr, @"Running input encountered an error %u", [deviceOutput lastError]);
+	XCTAssertTrue([deviceOutput lastError] == noErr, @"Running input encountered an error %u", [deviceOutput lastError]);
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The input from the device was silent (not necessarily an error)");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The input from the device was silent (not necessarily an error)");
 	
 	// change stream formats
 	[graph beginPatching];
@@ -129,9 +129,9 @@
 
 	postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		
-	STAssertTrue([deviceOutput lastError] == noErr, @"Running input encountered an error %u", [deviceOutput lastError]);
+	XCTAssertTrue([deviceOutput lastError] == noErr, @"Running input encountered an error %u", [deviceOutput lastError]);
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The input from the device was silent (not necessarily an error)");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The input from the device was silent (not necessarily an error)");
 	
 	// change stream formats again
 	[graph beginPatching];
@@ -159,9 +159,9 @@
 
 	postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		
-	STAssertTrue([deviceOutput lastError] == noErr, @"Running input encountered an error %u", [deviceOutput lastError]);
+	XCTAssertTrue([deviceOutput lastError] == noErr, @"Running input encountered an error %u", [deviceOutput lastError]);
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The input from the device was silent (not necessarily an error)");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The input from the device was silent (not necessarily an error)");
 }
 
 - (void)testOutputChannelMap
@@ -203,22 +203,22 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		
-	STAssertTrue([deviceOutput lastError] == noErr, @"Running output encountered an error %u", [deviceOutput lastError]);
+	XCTAssertTrue([deviceOutput lastError] == noErr, @"Running output encountered an error %u", [deviceOutput lastError]);
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the graph was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the graph was silent");
 		// elapsed time should be somewhere in the ballpark of the 0.5 sec sleep time
-	STAssertTrue(endTime - startTime > 0.4, @"The clock did not advance while the device ran");
+	XCTAssertTrue(endTime - startTime > 0.4, @"The clock did not advance while the device ran");
 	
 	// sleep for another half a second and check that the clock has not advanced
 	usleep(500 * 1000);
-	STAssertEquals([[deviceOutput clock] currentTimeSeconds], endTime, @"Clock advanced after stopping");
+	XCTAssertEqual([[deviceOutput clock] currentTimeSeconds], endTime, @"Clock advanced after stopping");
 
 		// clear the channel map
 	[deviceOutput setChannelMap: nil];	
 	channelMap = [deviceOutput channelMap];
-	STAssertEquals([[channelMap objectAtIndex: 0] intValue], 0, @"Channel Map at 0 should be 0");
+	XCTAssertEqual([[channelMap objectAtIndex: 0] intValue], 0, @"Channel Map at 0 should be 0");
 		// Channel map at 1 should be 0 because I told the output device to be mono, so it created duplicate stereo.
-	STAssertEquals([[channelMap objectAtIndex: 1] intValue], 0, @"Channel Map at 1 should be 0");	
+	XCTAssertEqual([[channelMap objectAtIndex: 1] intValue], 0, @"Channel Map at 1 should be 0");	
 }
 
 
@@ -264,15 +264,15 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		
-	STAssertTrue([deviceOutput lastError] == noErr, @"Running output encountered an error %u", [deviceOutput lastError]);
+	XCTAssertTrue([deviceOutput lastError] == noErr, @"Running output encountered an error %u", [deviceOutput lastError]);
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The input from the device was silent (not necessarily an error)");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The input from the device was silent (not necessarily an error)");
 		
 		// clear the channel map
 	[input setChannelMap: nil];	
 	channelMap = [input channelMap];
-	STAssertEquals([[channelMap objectAtIndex: 0] intValue], 0, @"Channel Map at 0 should be 0");
-	STAssertEquals([[channelMap objectAtIndex: 1] intValue], 1, @"Channel Map at 1 should be 1");	
+	XCTAssertEqual([[channelMap objectAtIndex: 0] intValue], 0, @"Channel Map at 0 should be 0");
+	XCTAssertEqual([[channelMap objectAtIndex: 1] intValue], 1, @"Channel Map at 1 should be 1");	
 }
 
 @end

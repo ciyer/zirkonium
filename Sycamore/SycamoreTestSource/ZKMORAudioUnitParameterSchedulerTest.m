@@ -44,7 +44,7 @@
 	[graph endPatching];
 	
 	[deviceOutput setGraph: graph];
-	STAssertTrue([graph retainCount] == 2, @"The graph's retain count should be 2 not %u", [graph retainCount]);
+	XCTAssertTrue([graph retainCount] == 2, @"The graph's retain count should be 2 not %u", [graph retainCount]);
 
 	// the mixer starts out with all levels at 0 -- set them to something useful
 	[mixer setToCanonicalLevels];
@@ -68,16 +68,16 @@
 	[deviceOutput stop];
 	[deviceOutput setVolume: 1.f];
 
-	STAssertTrue([deviceOutput lastError] == noErr, @"Running output encountered an error %u", [deviceOutput lastError]);
+	XCTAssertTrue([deviceOutput lastError] == noErr, @"Running output encountered an error %u", [deviceOutput lastError]);
 		// make sure that the peak level was greater than silence
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the graph was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the graph was silent");
 		// make sure the mixer has come down to 0
-	STAssertTrue(0 == [mixer volumeForOutput: 0], @"Ouput 0 should have volume 0, not %.2f", [mixer volumeForOutput: 0]);
+	XCTAssertTrue(0 == [mixer volumeForOutput: 0], @"Ouput 0 should have volume 0, not %.2f", [mixer volumeForOutput: 0]);
 	
 	unsigned mixerRetainCount = [mixer retainCount];
 	[scheduler release];
-	STAssertTrue(mixerRetainCount == ([mixer retainCount] + 1), @"Releasing the scheduler should have decreased the mixer's retainCount");
+	XCTAssertTrue(mixerRetainCount == ([mixer retainCount] + 1), @"Releasing the scheduler should have decreased the mixer's retainCount");
 }
 
 @end

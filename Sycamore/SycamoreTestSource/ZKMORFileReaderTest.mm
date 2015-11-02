@@ -36,7 +36,7 @@
 		usleep(1 * 1000 * 100);
 	}
 	aubl.Allocate(0);
-	STAssertTrue(rmssum > 0.f, @"The ZKMORFileReader pulled silence");
+	XCTAssertTrue(rmssum > 0.f, @"The ZKMORFileReader pulled silence");
 }
 
 @end

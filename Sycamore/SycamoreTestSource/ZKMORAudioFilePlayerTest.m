@@ -27,7 +27,7 @@
 - (void)readMP3
 {
 	[filePlayer setFilePath: [self mp3TestFilePath] error: nil];
-	STAssertEquals([filePlayer retainCount], (unsigned) 1, @"File player retain count should be 1");
+	XCTAssertEqual([filePlayer retainCount], (unsigned) 1, @"File player retain count should be 1");
 	// set up stream formats -- this needs to be done before initialization
 	AudioStreamBasicDescription streamFormat = [[filePlayer outputBusAtIndex: 0] streamFormat];
 	[[mixer inputBusAtIndex: 0] setStreamFormat: streamFormat];
@@ -43,7 +43,7 @@
 		[graph initialize];
 	[graph endPatching];
 	
-	STAssertEquals([filePlayer retainCount], (unsigned) 2, @"File player retain count should be 2");
+	XCTAssertEqual([filePlayer retainCount], (unsigned) 2, @"File player retain count should be 2");
 	
 	[simulator setConduit: graph];
 
@@ -56,7 +56,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file player was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file player was silent");
 	
 	[graph stop];
 }
@@ -66,7 +66,7 @@
 {
 	NSError* error = nil;
 	[filePlayer setFilePath: @"non-existant-file.wav" error: &error];
-	STAssertNotNil(error, @"Openeing a non-existant filePlayer should have produced an error");
+	XCTAssertNotNil(error, @"Openeing a non-existant filePlayer should have produced an error");
 }
 
 	// this is a test, but I want to call it myself, so don't use the word test in the name
@@ -99,7 +99,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio filePlayer was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio filePlayer was silent");
 	
 	[graph stop];
 }

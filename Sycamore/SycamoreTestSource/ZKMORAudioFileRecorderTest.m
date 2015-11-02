@@ -32,7 +32,7 @@
 	memset(&formatDesc, 0, sizeof(formatDesc));
 	[ZKMORAudioFileRecorder getAIFFInt16Format: &formatDesc channels: 2];
 	[fileRecorder setFilePath: [self scratchTestFilePath] fileType: kAudioFileAIFFType dataFormat: formatDesc error: &error];
-	STAssertNil(error, @"Set file path failed %@", error);
+	XCTAssertNil(error, @"Set file path failed %@", error);
 	if (error) {
 		[self deleteScratchFile];
 		return;
@@ -65,7 +65,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file player was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file player was silent");
 	
 	[graph stop];
 	[fileRecorder flushAndClose];
@@ -79,7 +79,7 @@
 	AudioStreamBasicDescription formatDesc; 
 	[ZKMORAudioFileRecorder getAIFFInt16Format: &formatDesc channels: 2];	
 	[fileRecorder setFilePath: @"non-existant-dir/non-existant-file.wav" fileType: kAudioFileAIFFType dataFormat: formatDesc error: &error];
-	STAssertNotNil(error, @"Openeing a non-existant fileRecorder should have produced an error");
+	XCTAssertNotNil(error, @"Openeing a non-existant fileRecorder should have produced an error");
 }
 
 	// this is a test, but I want to call it myself, so don't use the word test in the name
@@ -118,7 +118,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio fileRecorder was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio fileRecorder was silent");
 	
 	[graph stop];
 	[fileRecorder flushAndClose];
@@ -162,7 +162,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio fileRecorder was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio fileRecorder was silent");
 	
 	[graph stop];
 	[fileRecorder flushAndClose];
@@ -192,7 +192,7 @@
 
 - (void)testSetFilePath
 {
-	STAssertThrows([fileRecorder setFilePath: [self scratchTestFilePath] error: nil], @"File recorder should not implement setFilePath:");
+	XCTAssertThrows([fileRecorder setFilePath: [self scratchTestFilePath] error: nil], @"File recorder should not implement setFilePath:");
 }
 
 @end

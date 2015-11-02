@@ -190,6 +190,25 @@
 		36EE51D60BFC8CFC00F09AB4 /* ZKMORAudioUnitParameterScheduler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36EE51D40BFC8CFC00F09AB4 /* ZKMORAudioUnitParameterScheduler.mm */; };
 		36EE52240BFC92A500F09AB4 /* ZKMORAudioUnitParameterSchedulerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EE51FA0BFC911200F09AB4 /* ZKMORAudioUnitParameterSchedulerTest.m */; };
 		701EAC26177A7F240041BDBB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701EAC25177A7F240041BDBB /* SenTestingKit.framework */; };
+		709276621BE76F6A00028BB1 /* Sycamore_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 709276611BE76F6A00028BB1 /* Sycamore_Tests.m */; };
+		709276631BE76F6A00028BB1 /* Sycamore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Sycamore.framework */; };
+		709276691BE76FAD00028BB1 /* ZKMORAbstractProcessorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 362B42810AA49A1F00F7ED42 /* ZKMORAbstractProcessorTest.m */; };
+		7092766A1BE76FAD00028BB1 /* ZKMORAudioFileTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BC0E860AB879F900BBEC19 /* ZKMORAudioFileTest.m */; };
+		7092766B1BE76FAD00028BB1 /* ZKMORAudioFileOutputTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 366EB9D10AD1737200350D69 /* ZKMORAudioFileOutputTest.m */; };
+		7092766C1BE76FAD00028BB1 /* ZKMORAudioFilePlayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3626EAAB0ABAA15C007633F1 /* ZKMORAudioFilePlayerTest.m */; };
+		7092766D1BE76FAD00028BB1 /* ZKMORAudioFilePlayerParallelTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3621B2550B6F9BD600729026 /* ZKMORAudioFilePlayerParallelTest.mm */; };
+		7092766E1BE76FAD00028BB1 /* ZKMORAudioFileRecorderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3626EBE50ABAB977007633F1 /* ZKMORAudioFileRecorderTest.m */; };
+		7092766F1BE76FAD00028BB1 /* ZKMORAudioHardwareSystemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EC55220A9DBA5F007DF698 /* ZKMORAudioHardwareSystemTest.m */; };
+		709276701BE76FAD00028BB1 /* ZKMORAudioUnitMirrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A5DF370ABEF515006B08DA /* ZKMORAudioUnitMirrorTest.m */; };
+		709276711BE76FAD00028BB1 /* ZKMORAudioUnitParameterSchedulerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EE51FA0BFC911200F09AB4 /* ZKMORAudioUnitParameterSchedulerTest.m */; };
+		709276721BE76FAD00028BB1 /* ZKMORConduitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36944A620A9CC06E00770B32 /* ZKMORConduitTest.m */; };
+		709276731BE76FAD00028BB1 /* ZKMORDeviceOutputTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 361C34180AA73B6E008A5B73 /* ZKMORDeviceOutputTest.m */; };
+		709276741BE76FAD00028BB1 /* ZKMORFileReaderTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36C0D08D0AB5C3FE008EC728 /* ZKMORFileReaderTest.mm */; };
+		709276751BE76FAD00028BB1 /* ZKMORGraphTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 362B42930AA49AE600F7ED42 /* ZKMORGraphTest.m */; };
+		709276761BE76FAD00028BB1 /* ZKMORMixer3DTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 361ACB4B0A9E2D6B00E9C876 /* ZKMORMixer3DTest.m */; };
+		709276771BE76FAD00028BB1 /* ZKMORMixerMatrixTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 366086BB0A9F2B30006FDB9A /* ZKMORMixerMatrixTest.m */; };
+		709276781BE76FAD00028BB1 /* ZKMORNoiseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EC55690A9DD95D007DF698 /* ZKMORNoiseTest.m */; };
+		709276791BE76FAD00028BB1 /* ZKMORUtilitiesTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36EC50330A9D9F16007DF698 /* ZKMORUtilitiesTest.mm */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -224,6 +243,13 @@
 			remoteInfo = Sycamore;
 		};
 		36841DEF0AD3B3E700D04417 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Sycamore;
+		};
+		709276641BE76F6A00028BB1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
@@ -350,7 +376,7 @@
 		369448390A9C9FAF00770B32 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		3694489E0A9CA3F200770B32 /* ZKMORException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORException.h; sourceTree = "<group>"; };
 		3694489F0A9CA3F200770B32 /* ZKMORException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMORException.m; sourceTree = "<group>"; };
-		36944A4D0A9CBFF100770B32 /* SycamoreTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SycamoreTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36944A4D0A9CBFF100770B32 /* SycamoreTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SycamoreTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36944A4E0A9CBFF100770B32 /* SycamoreTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SycamoreTest-Info.plist"; sourceTree = "<group>"; };
 		36944A610A9CC06E00770B32 /* ZKMORConduitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORConduitTest.h; sourceTree = "<group>"; };
 		36944A620A9CC06E00770B32 /* ZKMORConduitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMORConduitTest.m; sourceTree = "<group>"; };
@@ -396,6 +422,9 @@
 		36EE51FA0BFC911200F09AB4 /* ZKMORAudioUnitParameterSchedulerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMORAudioUnitParameterSchedulerTest.m; sourceTree = "<group>"; };
 		701EAC25177A7F240041BDBB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		709276581BE7637B00028BB1 /* ConditionalMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConditionalMacros.h; sourceTree = "<group>"; };
+		7092765D1BE76F6A00028BB1 /* Sycamore Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sycamore Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		709276601BE76F6A00028BB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		709276611BE76F6A00028BB1 /* Sycamore_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sycamore_Tests.m; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* Sycamore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sycamore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -474,6 +503,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7092765A1BE76F6A00028BB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				709276631BE76F6A00028BB1 /* Sycamore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF560486A6940098B216 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -496,11 +533,12 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* Sycamore.framework */,
-				36944A4D0A9CBFF100770B32 /* SycamoreTest.octest */,
+				36944A4D0A9CBFF100770B32 /* SycamoreTest.xctest */,
 				36EC508D0A9DA123007DF698 /* SycamoreTestTool */,
 				363044610A9EEAAE009518F1 /* SycmoreDebugTest */,
 				3652A54D0AAC97E7003D3818 /* SycamoreFileExample */,
 				36841DCF0AD3B35900D04417 /* SycamoreListAUExample */,
+				7092765D1BE76F6A00028BB1 /* Sycamore Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -513,6 +551,7 @@
 				3687E4470A9EF55A00223615 /* Tests and Examples */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				7092765E1BE76F6A00028BB1 /* Sycamore Tests */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				36944A4E0A9CBFF100770B32 /* SycamoreTest-Info.plist */,
 			);
@@ -835,6 +874,23 @@
 			path = Generators;
 			sourceTree = "<group>";
 		};
+		7092765E1BE76F6A00028BB1 /* Sycamore Tests */ = {
+			isa = PBXGroup;
+			children = (
+				709276611BE76F6A00028BB1 /* Sycamore_Tests.m */,
+				7092765F1BE76F6A00028BB1 /* Supporting Files */,
+			);
+			path = "Sycamore Tests";
+			sourceTree = "<group>";
+		};
+		7092765F1BE76F6A00028BB1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				709276601BE76F6A00028BB1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -968,7 +1024,7 @@
 			);
 			name = SycamoreTest;
 			productName = SycamoreTest;
-			productReference = 36944A4D0A9CBFF100770B32 /* SycamoreTest.octest */;
+			productReference = 36944A4D0A9CBFF100770B32 /* SycamoreTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		36EC508C0A9DA123007DF698 /* SycamoreTestTool */ = {
@@ -987,6 +1043,24 @@
 			productName = SycamoreTestTool;
 			productReference = 36EC508D0A9DA123007DF698 /* SycamoreTestTool */;
 			productType = "com.apple.product-type.tool";
+		};
+		7092765C1BE76F6A00028BB1 /* Sycamore Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 709276661BE76F6A00028BB1 /* Build configuration list for PBXNativeTarget "Sycamore Tests" */;
+			buildPhases = (
+				709276591BE76F6A00028BB1 /* Sources */,
+				7092765A1BE76F6A00028BB1 /* Frameworks */,
+				7092765B1BE76F6A00028BB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				709276651BE76F6A00028BB1 /* PBXTargetDependency */,
+			);
+			name = "Sycamore Tests";
+			productName = "Sycamore Tests";
+			productReference = 7092765D1BE76F6A00028BB1 /* Sycamore Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8DC2EF4F0486A6940098B216 /* Sycamore */ = {
 			isa = PBXNativeTarget;
@@ -1015,6 +1089,11 @@
 			attributes = {
 				LastTestingUpgradeCheck = 0620;
 				LastUpgradeCheck = 0620;
+				TargetAttributes = {
+					7092765C1BE76F6A00028BB1 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Sycamore" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1037,12 +1116,20 @@
 				363044600A9EEAAE009518F1 /* SycmoreDebugTest */,
 				3652A54C0AAC97E7003D3818 /* SycamoreFileExample */,
 				36841DCE0AD3B35900D04417 /* SycamoreListAUExample */,
+				7092765C1BE76F6A00028BB1 /* Sycamore Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		36944A480A9CBFF100770B32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7092765B1BE76F6A00028BB1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1150,6 +1237,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		709276591BE76F6A00028BB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				709276691BE76FAD00028BB1 /* ZKMORAbstractProcessorTest.m in Sources */,
+				7092766A1BE76FAD00028BB1 /* ZKMORAudioFileTest.m in Sources */,
+				7092766B1BE76FAD00028BB1 /* ZKMORAudioFileOutputTest.m in Sources */,
+				7092766C1BE76FAD00028BB1 /* ZKMORAudioFilePlayerTest.m in Sources */,
+				7092766D1BE76FAD00028BB1 /* ZKMORAudioFilePlayerParallelTest.mm in Sources */,
+				7092766E1BE76FAD00028BB1 /* ZKMORAudioFileRecorderTest.m in Sources */,
+				7092766F1BE76FAD00028BB1 /* ZKMORAudioHardwareSystemTest.m in Sources */,
+				709276701BE76FAD00028BB1 /* ZKMORAudioUnitMirrorTest.m in Sources */,
+				709276711BE76FAD00028BB1 /* ZKMORAudioUnitParameterSchedulerTest.m in Sources */,
+				709276721BE76FAD00028BB1 /* ZKMORConduitTest.m in Sources */,
+				709276731BE76FAD00028BB1 /* ZKMORDeviceOutputTest.m in Sources */,
+				709276741BE76FAD00028BB1 /* ZKMORFileReaderTest.mm in Sources */,
+				709276751BE76FAD00028BB1 /* ZKMORGraphTest.m in Sources */,
+				709276761BE76FAD00028BB1 /* ZKMORMixer3DTest.m in Sources */,
+				709276771BE76FAD00028BB1 /* ZKMORMixerMatrixTest.m in Sources */,
+				709276781BE76FAD00028BB1 /* ZKMORNoiseTest.m in Sources */,
+				709276791BE76FAD00028BB1 /* ZKMORUtilitiesTest.mm in Sources */,
+				709276621BE76F6A00028BB1 /* Sycamore_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF540486A6940098B216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1231,6 +1343,11 @@
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* Sycamore */;
 			targetProxy = 36841DEF0AD3B3E700D04417 /* PBXContainerItemProxy */;
+		};
+		709276651BE76F6A00028BB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* Sycamore */;
+			targetProxy = 709276641BE76F6A00028BB1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1473,7 +1590,6 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "SycamoreTest-Info.plist";
@@ -1482,9 +1598,7 @@
 					"-framework",
 					Cocoa,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SycamoreTest;
-				ZERO_LINK = NO;
 			};
 			name = Debug;
 		};
@@ -1501,7 +1615,6 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "SycamoreTest-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
@@ -1509,9 +1622,7 @@
 					"-framework",
 					Cocoa,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = SycamoreTest;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -1576,6 +1687,94 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = SycamoreTestTool;
 				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		709276671BE76F6A00028BB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Sycamore Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		709276681BE76F6A00028BB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Sycamore Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1644,6 +1843,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		709276661BE76F6A00028BB1 /* Build configuration list for PBXNativeTarget "Sycamore Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				709276671BE76F6A00028BB1 /* Debug */,
+				709276681BE76F6A00028BB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -53,7 +53,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file was silent");
 	
 	[graph stop];
 }
@@ -63,7 +63,7 @@
 {
 	NSError* error = nil;
 	[file setFilePath: @"non-existant-file.wav" error: &error];
-	STAssertNotNil(error, @"Openeing a non-existant file should have produced an error");
+	XCTAssertNotNil(error, @"Openeing a non-existant file should have produced an error");
 }
 
 	// this is a test, but I want to call it mys elf, so don't use the word test in the name
@@ -96,7 +96,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file was silent");
 	
 	[graph stop];
 }

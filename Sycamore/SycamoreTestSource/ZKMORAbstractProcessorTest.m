@@ -46,7 +46,13 @@
 		NSString* directoryPath = [[theBundle bundlePath] stringByDeletingLastPathComponent];
 		filePath = 
 			[directoryPath stringByAppendingPathComponent: @"../../examplefiles/"];
-	} else 
+	} else if ([@"xctest" isEqualToString: [[theBundle bundlePath] pathExtension]]) {
+		// we are in an xcunit bundle
+		NSString* directoryPath = [[theBundle bundlePath] stringByDeletingLastPathComponent];
+		NSLog(@"%@", directoryPath);
+		filePath = 
+			[directoryPath stringByAppendingPathComponent: @"../../examplefiles/"];
+	} else
 		filePath = @"../../examplefiles/";	
 
 	return filePath;
@@ -97,9 +103,9 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [myMixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	STAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file was silent");
 	
-	STAssertTrue(endTime - startTime > 0.5, @"The clock should have advanced while simulating");
+	XCTAssertTrue(endTime - startTime > 0.5, @"The clock should have advanced while simulating");
 	[mySimulator stop];
 	
 	[myFile release];

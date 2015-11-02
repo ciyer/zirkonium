@@ -6,11 +6,11 @@
 //  Copyright 2006 C. Ramakrishnan/ZKM. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import <Sycamore/Sycamore.h>
 
 
-@interface ZKMORMixer3DTest : SenTestCase {
+@interface ZKMORMixer3DTest : XCTestCase {
 	ZKMORMixer3D* mixer3D;
 }
 

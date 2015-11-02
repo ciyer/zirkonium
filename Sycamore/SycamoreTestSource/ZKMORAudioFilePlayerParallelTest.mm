@@ -56,12 +56,12 @@
 		OSStatus err;
 		err = RenderFunc(filePlayer1, &flags, &ts, 0, numFrames, abl1);
 		if (err) {
-			STFail(@"Render filePlayer1 failed %i", err);
+			XCTFail(@"Render filePlayer1 failed %i", err);
 		}
 		
 		err = RenderFunc(filePlayer2, &flags, &ts, 0, numFrames, abl2);
 		if (err) {
-			STFail(@"Render filePlayer1 failed %i", err);
+			XCTFail(@"Render filePlayer1 failed %i", err);
 		}
 		
 			// compare buffers
@@ -73,7 +73,7 @@
 				float* samps1 = (float *) buffer1->mData;
 				float* samps2 = (float *) buffer2->mData;
 //				STAssertEqualsWithAccuracy(samps1[i], samps2[i], 0.000001
-				STAssertEquals(samps1[i], samps2[i], @"Sample %u:%u are not equal (%.3f : %.3f)", j, i, samps1[i], samps2[i]);
+				XCTAssertEqual(samps1[i], samps2[i], @"Sample %u:%u are not equal (%.3f : %.3f)", j, i, samps1[i], samps2[i]);
 			}
 		}
 		
