@@ -21,6 +21,7 @@
 	graph = [[ZKMORGraph alloc] init];
 	mixer = [[ZKMORMixerMatrix alloc] init];
 	noise = [[ZKMORWhiteNoise alloc] init];
+	pinkNoise = [[ZKMORPinkNoise alloc] init];
 	simulator = [[ZKMORRenderSimulator alloc] init];
 	
 	[mixer setMeteringOn: YES];
@@ -29,6 +30,7 @@
 - (void)tearDown
 {
 	[noise release];
+	[pinkNoise release];
 	[graph release];
 	[mixer release];
 	[simulator release];

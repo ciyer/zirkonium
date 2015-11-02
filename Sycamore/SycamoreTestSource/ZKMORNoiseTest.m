@@ -112,7 +112,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the pink noise was silent (%.2f db)", postPeakHoldLevelPower);
+	XCTAssertTrue(postPeakHoldLevelPower > -150.f, @"The output of the pink noise was silent (%.2f db)", postPeakHoldLevelPower);
 	
 	[graph stop];
 }

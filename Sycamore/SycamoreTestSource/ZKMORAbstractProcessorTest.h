@@ -14,6 +14,7 @@
 		//  Graph Objects
 	ZKMORGraph*				graph;
 	ZKMORWhiteNoise*		noise;
+	ZKMORPinkNoise*			pinkNoise;
 	ZKMORMixerMatrix*		mixer;
 	ZKMORRenderSimulator*	simulator;
 }

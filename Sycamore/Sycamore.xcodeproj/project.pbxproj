@@ -189,7 +189,6 @@
 		36EE51D50BFC8CFC00F09AB4 /* ZKMORAudioUnitParameterScheduler.h in Headers */ = {isa = PBXBuildFile; fileRef = 36EE51D30BFC8CFC00F09AB4 /* ZKMORAudioUnitParameterScheduler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36EE51D60BFC8CFC00F09AB4 /* ZKMORAudioUnitParameterScheduler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 36EE51D40BFC8CFC00F09AB4 /* ZKMORAudioUnitParameterScheduler.mm */; };
 		36EE52240BFC92A500F09AB4 /* ZKMORAudioUnitParameterSchedulerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EE51FA0BFC911200F09AB4 /* ZKMORAudioUnitParameterSchedulerTest.m */; };
-		701EAC26177A7F240041BDBB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701EAC25177A7F240041BDBB /* SenTestingKit.framework */; };
 		709276621BE76F6A00028BB1 /* Sycamore_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 709276611BE76F6A00028BB1 /* Sycamore_Tests.m */; };
 		709276631BE76F6A00028BB1 /* Sycamore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Sycamore.framework */; };
 		709276691BE76FAD00028BB1 /* ZKMORAbstractProcessorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 362B42810AA49A1F00F7ED42 /* ZKMORAbstractProcessorTest.m */; };
@@ -420,7 +419,6 @@
 		36EE51D40BFC8CFC00F09AB4 /* ZKMORAudioUnitParameterScheduler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKMORAudioUnitParameterScheduler.mm; sourceTree = "<group>"; };
 		36EE51F90BFC911200F09AB4 /* ZKMORAudioUnitParameterSchedulerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMORAudioUnitParameterSchedulerTest.h; sourceTree = "<group>"; };
 		36EE51FA0BFC911200F09AB4 /* ZKMORAudioUnitParameterSchedulerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMORAudioUnitParameterSchedulerTest.m; sourceTree = "<group>"; };
-		701EAC25177A7F240041BDBB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		709276581BE7637B00028BB1 /* ConditionalMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConditionalMacros.h; sourceTree = "<group>"; };
 		7092765D1BE76F6A00028BB1 /* Sycamore Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sycamore Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		709276601BE76F6A00028BB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -490,7 +488,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				701EAC26177A7F240041BDBB /* SenTestingKit.framework in Frameworks */,
 				36EC50BA0A9DA202007DF698 /* CoreServices.framework in Frameworks */,
 				36EC50BB0A9DA203007DF698 /* Cocoa.framework in Frameworks */,
 				36EC50BC0A9DA203007DF698 /* AudioUnit.framework in Frameworks */,
@@ -546,7 +543,6 @@
 		0867D691FE84028FC02AAC07 /* Sycamore */ = {
 			isa = PBXGroup;
 			children = (
-				701EAC25177A7F240041BDBB /* SenTestingKit.framework */,
 				3687E4440A9EF52C00223615 /* Sycamore */,
 				3687E4470A9EF55A00223615 /* Tests and Examples */,
 				089C1665FE841158C02AAC07 /* Resources */,
@@ -1015,7 +1011,6 @@
 				36944A480A9CBFF100770B32 /* Resources */,
 				36944A490A9CBFF100770B32 /* Sources */,
 				36944A4A0A9CBFF100770B32 /* Frameworks */,
-				36944A4B0A9CBFF100770B32 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1146,22 +1141,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		36944A4B0A9CBFF100770B32 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3630445E0A9EEAAE009518F1 /* Sources */ = {
