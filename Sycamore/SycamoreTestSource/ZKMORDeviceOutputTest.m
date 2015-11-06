@@ -272,7 +272,7 @@
 	[input setChannelMap: nil];	
 	channelMap = [input channelMap];
 	XCTAssertEqual([[channelMap objectAtIndex: 0] intValue], 0, @"Channel Map at 0 should be 0");
-	XCTAssertEqual([[channelMap objectAtIndex: 1] intValue], 1, @"Channel Map at 1 should be 1");	
+	XCTAssertEqual([[channelMap objectAtIndex: 1] intValue], -1, @"Channel Map at 1 should be -1");
 }
 
 @end
