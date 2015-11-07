@@ -306,7 +306,7 @@
 		365A3ECF0AEF6FA300127550 /* ZKMNRSpeakerLayoutTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKMNRSpeakerLayoutTest.mm; sourceTree = "<group>"; };
 		366717370B398C2100F04234 /* ZKMNRSpeakerLayoutSimulatorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMNRSpeakerLayoutSimulatorTest.h; sourceTree = "<group>"; };
 		366717380B398C2100F04234 /* ZKMNRSpeakerLayoutSimulatorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMNRSpeakerLayoutSimulatorTest.m; sourceTree = "<group>"; };
-		366964510AEE89B100E4EAC9 /* SyncretismTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyncretismTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		366964510AEE89B100E4EAC9 /* SyncretismTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyncretismTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		366964520AEE89B100E4EAC9 /* SyncretismTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SyncretismTest-Info.plist"; sourceTree = "<group>"; };
 		3669645B0AEE89F600E4EAC9 /* ZKMNRCoordinatesTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMNRCoordinatesTest.h; sourceTree = "<group>"; };
 		3669645C0AEE89F600E4EAC9 /* ZKMNRCoordinatesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMNRCoordinatesTest.m; sourceTree = "<group>"; };
@@ -377,7 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* Syncretism.framework */,
-				366964510AEE89B100E4EAC9 /* SyncretismTest.octest */,
+				366964510AEE89B100E4EAC9 /* SyncretismTest.xctest */,
 				36226F490B3AC10A009CAA75 /* SyncretismTestTool */,
 			);
 			name = Products;
@@ -865,7 +865,7 @@
 			);
 			name = SyncretismTest;
 			productName = SyncretismTest;
-			productReference = 366964510AEE89B100E4EAC9 /* SyncretismTest.octest */;
+			productReference = 366964510AEE89B100E4EAC9 /* SyncretismTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8DC2EF4F0486A6940098B216 /* Syncretism */ = {
@@ -893,7 +893,8 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastTestingUpgradeCheck = 0700;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Syncretism" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1084,6 +1085,7 @@
 					"-lm",
 				);
 				OTHER_LDFLAGS_QUOTED_FOR_TARGET_1 = "-L\"$(SRCROOT)/TetGenSource\"";
+				PRODUCT_BUNDLE_IDENTIFIER = de.zkm.Syncretism;
 				PRODUCT_NAME = Syncretism;
 				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = framework;
@@ -1113,6 +1115,7 @@
 					"-lm",
 				);
 				OTHER_LDFLAGS_QUOTED_FOR_TARGET_1 = "-L\"$(SRCROOT)/TetGenSource\"";
+				PRODUCT_BUNDLE_IDENTIFIER = de.zkm.Syncretism;
 				PRODUCT_NAME = Syncretism;
 				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = framework;
@@ -1122,10 +1125,11 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = "-DCAAF_USE_EXTAUDIOFILE=0";
 				PREBINDING = NO;
 				SDKROOT = macosx;
@@ -1242,6 +1246,7 @@
 					Cocoa,
 				);
 				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.SyncretismTest;
 				PRODUCT_NAME = SyncretismTest;
 				VALID_ARCHS = "i386 x86_64";
 				ZERO_LINK = NO;
@@ -1273,6 +1278,7 @@
 					Cocoa,
 				);
 				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.SyncretismTest;
 				PRODUCT_NAME = SyncretismTest;
 				VALID_ARCHS = "i386 x86_64";
 				ZERO_LINK = NO;

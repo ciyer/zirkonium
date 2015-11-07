@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 44;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -39,7 +39,7 @@
 		361513010B665C5C001313B3 /* ZKMRNFileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 361512FF0B665C5C001313B3 /* ZKMRNFileSource.m */; };
 		36196F450B52896F00BD6BF5 /* ZKMRNInputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 36196F430B52896F00BD6BF5 /* ZKMRNInputSource.m */; };
 		36196F4D0B52897E00BD6BF5 /* ZKMRNTestSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 36196F4B0B52897E00BD6BF5 /* ZKMRNTestSource.m */; };
-		3621B4740B6FB86D00729026 /* Syncretism.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 36000F390B274A84000BFC2A /* Syncretism.framework */; };
+		3621B4740B6FB86D00729026 /* Syncretism.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 36000F390B274A84000BFC2A /* Syncretism.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		362330A50AF2074E0059E069 /* ZKMRNDomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 362330A30AF2074E0059E069 /* ZKMRNDomeView.m */; };
 		362330BF0AF208F20059E069 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362330BE0AF208F20059E069 /* OpenGL.framework */; };
 		3623332F0AF258260059E069 /* ZKMRNSpeakerSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 3623332D0AF258260059E069 /* ZKMRNSpeakerSetup.m */; };
@@ -109,9 +109,9 @@
 		B4CB54C7125C5802002A6F6E /* VVBasics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB54C6125C5802002A6F6E /* VVBasics.framework */; };
 		B4CB54C9125C5802002A6F6E /* VVMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB54C8125C5802002A6F6E /* VVMIDI.framework */; };
 		B4CB54CB125C5802002A6F6E /* VVOSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB54CA125C5802002A6F6E /* VVOSC.framework */; };
-		B4CB554D125C5C17002A6F6E /* VVBasics.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB54C6125C5802002A6F6E /* VVBasics.framework */; };
-		B4CB554E125C5C17002A6F6E /* VVMIDI.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB54C8125C5802002A6F6E /* VVMIDI.framework */; };
-		B4CB554F125C5C17002A6F6E /* VVOSC.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB54CA125C5802002A6F6E /* VVOSC.framework */; };
+		B4CB554D125C5C17002A6F6E /* VVBasics.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB54C6125C5802002A6F6E /* VVBasics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B4CB554E125C5C17002A6F6E /* VVMIDI.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB54C8125C5802002A6F6E /* VVMIDI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B4CB554F125C5C17002A6F6E /* VVOSC.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B4CB54CA125C5802002A6F6E /* VVOSC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B4CF257A1451A4C200449A7E /* FileSourcesController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CF25791451A4C200449A7E /* FileSourcesController.m */; };
 		B4CF25F71451C21900449A7E /* NSString+PathResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CF25F61451C21900449A7E /* NSString+PathResolver.m */; };
 		B4D163951175E68B007FA5C4 /* StudioSetup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4D163941175E68B007FA5C4 /* StudioSetup.xcdatamodeld */; };
@@ -494,7 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				36000F390B274A84000BFC2A /* Syncretism.framework */,
-				36000F3B0B274A84000BFC2A /* SyncretismTest.octest */,
+				36000F3B0B274A84000BFC2A /* SyncretismTest.xctest */,
 				36268FC70B3AECB6008E3CA1 /* SyncretismTestTool */,
 			);
 			name = Products;
@@ -736,9 +736,10 @@
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 26FC0ACE0875C91100E6366F /* Build configuration list for PBXProject "Zirkonium" */;
-			compatibilityVersion = "Xcode 3.0";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -771,10 +772,10 @@
 			remoteRef = 36000F380B274A84000BFC2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		36000F3B0B274A84000BFC2A /* SyncretismTest.octest */ = {
+		36000F3B0B274A84000BFC2A /* SyncretismTest.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = SyncretismTest.octest;
+			path = SyncretismTest.xctest;
 			remoteRef = 36000F3A0B274A84000BFC2A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -944,7 +945,7 @@
 		26FC0ACB0875C91100E6366F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					../build,
@@ -966,10 +967,10 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = de.zkm.Zirkonium;
 				PRODUCT_NAME = Zirkonium;
 				SKIP_INSTALL = NO;
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -978,7 +979,7 @@
 		26FC0ACC0875C91100E6366F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					../build,
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -1000,9 +1001,9 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = de.zkm.Zirkonium;
 				PRODUCT_NAME = Zirkonium;
-				VALID_ARCHS = i386;
+				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1010,7 +1011,7 @@
 		26FC0ACF0875C91100E6366F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ENABLE_TESTABILITY = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1021,7 +1022,7 @@
 				MOMC_NO_MAX_PROPERTY_COUNT_WARNINGS = YES;
 				MOMC_NO_WARNINGS = YES;
 				MOMC_SUPPRESS_INVERSE_TRANSIENT_ERROR = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx;
 				SYMROOT = ../build;
@@ -1033,7 +1034,6 @@
 		26FC0AD00875C91100E6366F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1050,7 +1050,6 @@
 		36797D3F0BA00ACB00772FB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = i386;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -1062,7 +1061,6 @@
 		36797D400BA00ACB00772FB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = i386;
 				COPY_PHASE_STRIP = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
