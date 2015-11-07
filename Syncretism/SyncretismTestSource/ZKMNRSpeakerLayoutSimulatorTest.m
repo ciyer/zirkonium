@@ -126,7 +126,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the pink noise was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -160.f, @"The output of the pink noise was silent");
 	
 	[simulator stop];
 }
@@ -190,7 +190,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [mixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file player was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -160.f, @"The output of the audio file player was silent");
 	
 	[fileOutput stop];
 	[self verifyScratchFile];

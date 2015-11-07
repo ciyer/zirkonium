@@ -41,8 +41,9 @@
 		// some gymnastics to find the directory with example files
 	NSBundle* theBundle = [NSBundle bundleForClass: [self class]];
 	NSString* filePath;
-	if ([@"octest" isEqualToString: [[theBundle bundlePath] pathExtension]]) {
-		// we are in an ocunit bundle
+	if ([@"octest" isEqualToString: [[theBundle bundlePath] pathExtension]] ||
+        [@"xctest" isEqualToString: [[theBundle bundlePath] pathExtension]]) {
+		// we are in an test bundle
 		NSString* directoryPath = [[theBundle bundlePath] stringByDeletingLastPathComponent];
 		filePath = 
 			[directoryPath stringByAppendingPathComponent: @"../../examplefiles/"];
@@ -96,7 +97,7 @@
 
 	float postPeakHoldLevelPower = [(ZKMORMixerMatrixOutputBus *) [myMixer outputBusAtIndex: 0] postPeakHoldLevelPower];
 		// make sure that the peak level was greater than silence
-	XCTAssertTrue(postPeakHoldLevelPower > -120.f, @"The output of the audio file was silent");
+	XCTAssertTrue(postPeakHoldLevelPower > -160.f, @"The output of the audio file was silent : %.2f", postPeakHoldLevelPower);
 	
 	[mySimulator stop];
 	[myFile release];
