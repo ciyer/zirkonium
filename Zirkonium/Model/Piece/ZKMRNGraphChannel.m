@@ -203,7 +203,8 @@ NSString* ZKMRNGraphChannelChangedInitalNotification = @"ZKMRNGraphChannelChange
 		[self willChangeValueForKey: @"colorImage"];
 		[self setPrimitiveValue: colorImage forKey:  @"colorImage"];
 		[self didChangeValueForKey: @"colorImage"];
-		[colorImage release];
+        // CR 2015-11-09 Do not release because setPrimitiveValue does not retain
+		// [colorImage release];
 	}
 	return colorImage;
 }

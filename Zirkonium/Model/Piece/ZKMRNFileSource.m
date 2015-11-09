@@ -83,8 +83,11 @@
 		ZKMORAudioFilePlayer* conduit = (ZKMORAudioFilePlayer *)[self conduit];
 		double primitiveDuration = [conduit isFileFSRefValid] ? [conduit duration] : 0.;
 		duration = [[NSNumber alloc] initWithDouble: primitiveDuration];
+        [self willChangeValueForKey: @"duration"];
 		[self setPrimitiveValue: duration forKey: @"duration"];
-		[duration release];
+        [self didChangeValueForKey: @"duration"];
+        // CR 2015-11-09 Do not release because setPrimitiveValue does not retain
+		// [duration release];
 	}
 	return duration;
 }
