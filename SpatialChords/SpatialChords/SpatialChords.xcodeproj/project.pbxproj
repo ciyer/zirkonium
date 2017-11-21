@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70E3EC611BF0BA41001FA4BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3EC601BF0BA41001FA4BC /* AppDelegate.m */; };
+		70E3EC641BF0BA41001FA4BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3EC631BF0BA41001FA4BC /* main.m */; };
+		70E3EC671BF0BA41001FA4BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3EC661BF0BA41001FA4BC /* ViewController.m */; };
+		70E3EC691BF0BA41001FA4BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70E3EC681BF0BA41001FA4BC /* Assets.xcassets */; };
+		70E3EC6C1BF0BA41001FA4BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E3EC6A1BF0BA41001FA4BC /* Main.storyboard */; };
+		70E3EC771BF0BA41001FA4BC /* SpatialChordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3EC761BF0BA41001FA4BC /* SpatialChordsTests.m */; };
+		70E3EC821BF0BA41001FA4BC /* SpatialChordsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3EC811BF0BA41001FA4BC /* SpatialChordsUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70E3EC731BF0BA41001FA4BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70E3EC541BF0BA41001FA4BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70E3EC5B1BF0BA41001FA4BC;
+			remoteInfo = SpatialChords;
+		};
+		70E3EC7E1BF0BA41001FA4BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70E3EC541BF0BA41001FA4BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70E3EC5B1BF0BA41001FA4BC;
+			remoteInfo = SpatialChords;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		70E3EC5C1BF0BA41001FA4BC /* SpatialChords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialChords.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70E3EC5F1BF0BA41001FA4BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		70E3EC601BF0BA41001FA4BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		70E3EC631BF0BA41001FA4BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		70E3EC651BF0BA41001FA4BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		70E3EC661BF0BA41001FA4BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		70E3EC681BF0BA41001FA4BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70E3EC6B1BF0BA41001FA4BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		70E3EC6D1BF0BA41001FA4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70E3EC721BF0BA41001FA4BC /* SpatialChordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpatialChordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70E3EC761BF0BA41001FA4BC /* SpatialChordsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpatialChordsTests.m; sourceTree = "<group>"; };
+		70E3EC781BF0BA41001FA4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70E3EC7D1BF0BA41001FA4BC /* SpatialChordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpatialChordsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70E3EC811BF0BA41001FA4BC /* SpatialChordsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpatialChordsUITests.m; sourceTree = "<group>"; };
+		70E3EC831BF0BA41001FA4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70E3EC591BF0BA41001FA4BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70E3EC6F1BF0BA41001FA4BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70E3EC7A1BF0BA41001FA4BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70E3EC531BF0BA41001FA4BC = {
+			isa = PBXGroup;
+			children = (
+				70E3EC5E1BF0BA41001FA4BC /* SpatialChords */,
+				70E3EC751BF0BA41001FA4BC /* SpatialChordsTests */,
+				70E3EC801BF0BA41001FA4BC /* SpatialChordsUITests */,
+				70E3EC5D1BF0BA41001FA4BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70E3EC5D1BF0BA41001FA4BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70E3EC5C1BF0BA41001FA4BC /* SpatialChords.app */,
+				70E3EC721BF0BA41001FA4BC /* SpatialChordsTests.xctest */,
+				70E3EC7D1BF0BA41001FA4BC /* SpatialChordsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70E3EC5E1BF0BA41001FA4BC /* SpatialChords */ = {
+			isa = PBXGroup;
+			children = (
+				70E3EC5F1BF0BA41001FA4BC /* AppDelegate.h */,
+				70E3EC601BF0BA41001FA4BC /* AppDelegate.m */,
+				70E3EC651BF0BA41001FA4BC /* ViewController.h */,
+				70E3EC661BF0BA41001FA4BC /* ViewController.m */,
+				70E3EC681BF0BA41001FA4BC /* Assets.xcassets */,
+				70E3EC6A1BF0BA41001FA4BC /* Main.storyboard */,
+				70E3EC6D1BF0BA41001FA4BC /* Info.plist */,
+				70E3EC621BF0BA41001FA4BC /* Supporting Files */,
+			);
+			path = SpatialChords;
+			sourceTree = "<group>";
+		};
+		70E3EC621BF0BA41001FA4BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70E3EC631BF0BA41001FA4BC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70E3EC751BF0BA41001FA4BC /* SpatialChordsTests */ = {
+			isa = PBXGroup;
+			children = (
+				70E3EC761BF0BA41001FA4BC /* SpatialChordsTests.m */,
+				70E3EC781BF0BA41001FA4BC /* Info.plist */,
+			);
+			path = SpatialChordsTests;
+			sourceTree = "<group>";
+		};
+		70E3EC801BF0BA41001FA4BC /* SpatialChordsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70E3EC811BF0BA41001FA4BC /* SpatialChordsUITests.m */,
+				70E3EC831BF0BA41001FA4BC /* Info.plist */,
+			);
+			path = SpatialChordsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70E3EC5B1BF0BA41001FA4BC /* SpatialChords */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70E3EC861BF0BA41001FA4BC /* Build configuration list for PBXNativeTarget "SpatialChords" */;
+			buildPhases = (
+				70E3EC581BF0BA41001FA4BC /* Sources */,
+				70E3EC591BF0BA41001FA4BC /* Frameworks */,
+				70E3EC5A1BF0BA41001FA4BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpatialChords;
+			productName = SpatialChords;
+			productReference = 70E3EC5C1BF0BA41001FA4BC /* SpatialChords.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70E3EC711BF0BA41001FA4BC /* SpatialChordsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70E3EC891BF0BA41001FA4BC /* Build configuration list for PBXNativeTarget "SpatialChordsTests" */;
+			buildPhases = (
+				70E3EC6E1BF0BA41001FA4BC /* Sources */,
+				70E3EC6F1BF0BA41001FA4BC /* Frameworks */,
+				70E3EC701BF0BA41001FA4BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70E3EC741BF0BA41001FA4BC /* PBXTargetDependency */,
+			);
+			name = SpatialChordsTests;
+			productName = SpatialChordsTests;
+			productReference = 70E3EC721BF0BA41001FA4BC /* SpatialChordsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70E3EC7C1BF0BA41001FA4BC /* SpatialChordsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70E3EC8C1BF0BA41001FA4BC /* Build configuration list for PBXNativeTarget "SpatialChordsUITests" */;
+			buildPhases = (
+				70E3EC791BF0BA41001FA4BC /* Sources */,
+				70E3EC7A1BF0BA41001FA4BC /* Frameworks */,
+				70E3EC7B1BF0BA41001FA4BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70E3EC7F1BF0BA41001FA4BC /* PBXTargetDependency */,
+			);
+			name = SpatialChordsUITests;
+			productName = SpatialChordsUITests;
+			productReference = 70E3EC7D1BF0BA41001FA4BC /* SpatialChordsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70E3EC541BF0BA41001FA4BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = illposed.com;
+				TargetAttributes = {
+					70E3EC5B1BF0BA41001FA4BC = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					70E3EC711BF0BA41001FA4BC = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 70E3EC5B1BF0BA41001FA4BC;
+					};
+					70E3EC7C1BF0BA41001FA4BC = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 70E3EC5B1BF0BA41001FA4BC;
+					};
+				};
+			};
+			buildConfigurationList = 70E3EC571BF0BA41001FA4BC /* Build configuration list for PBXProject "SpatialChords" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70E3EC531BF0BA41001FA4BC;
+			productRefGroup = 70E3EC5D1BF0BA41001FA4BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70E3EC5B1BF0BA41001FA4BC /* SpatialChords */,
+				70E3EC711BF0BA41001FA4BC /* SpatialChordsTests */,
+				70E3EC7C1BF0BA41001FA4BC /* SpatialChordsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70E3EC5A1BF0BA41001FA4BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70E3EC691BF0BA41001FA4BC /* Assets.xcassets in Resources */,
+				70E3EC6C1BF0BA41001FA4BC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70E3EC701BF0BA41001FA4BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70E3EC7B1BF0BA41001FA4BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70E3EC581BF0BA41001FA4BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70E3EC671BF0BA41001FA4BC /* ViewController.m in Sources */,
+				70E3EC641BF0BA41001FA4BC /* main.m in Sources */,
+				70E3EC611BF0BA41001FA4BC /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70E3EC6E1BF0BA41001FA4BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70E3EC771BF0BA41001FA4BC /* SpatialChordsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70E3EC791BF0BA41001FA4BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70E3EC821BF0BA41001FA4BC /* SpatialChordsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70E3EC741BF0BA41001FA4BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70E3EC5B1BF0BA41001FA4BC /* SpatialChords */;
+			targetProxy = 70E3EC731BF0BA41001FA4BC /* PBXContainerItemProxy */;
+		};
+		70E3EC7F1BF0BA41001FA4BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70E3EC5B1BF0BA41001FA4BC /* SpatialChords */;
+			targetProxy = 70E3EC7E1BF0BA41001FA4BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		70E3EC6A1BF0BA41001FA4BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70E3EC6B1BF0BA41001FA4BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70E3EC841BF0BA41001FA4BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		70E3EC851BF0BA41001FA4BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		70E3EC871BF0BA41001FA4BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpatialChords/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.illposed.SpatialChords;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		70E3EC881BF0BA41001FA4BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpatialChords/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.illposed.SpatialChords;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		70E3EC8A1BF0BA41001FA4BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpatialChordsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.illposed.SpatialChordsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpatialChords.app/Contents/MacOS/SpatialChords";
+			};
+			name = Debug;
+		};
+		70E3EC8B1BF0BA41001FA4BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpatialChordsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.illposed.SpatialChordsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpatialChords.app/Contents/MacOS/SpatialChords";
+			};
+			name = Release;
+		};
+		70E3EC8D1BF0BA41001FA4BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpatialChordsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.illposed.SpatialChordsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SpatialChords;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		70E3EC8E1BF0BA41001FA4BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpatialChordsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.illposed.SpatialChordsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SpatialChords;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70E3EC571BF0BA41001FA4BC /* Build configuration list for PBXProject "SpatialChords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70E3EC841BF0BA41001FA4BC /* Debug */,
+				70E3EC851BF0BA41001FA4BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70E3EC861BF0BA41001FA4BC /* Build configuration list for PBXNativeTarget "SpatialChords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70E3EC871BF0BA41001FA4BC /* Debug */,
+				70E3EC881BF0BA41001FA4BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70E3EC891BF0BA41001FA4BC /* Build configuration list for PBXNativeTarget "SpatialChordsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70E3EC8A1BF0BA41001FA4BC /* Debug */,
+				70E3EC8B1BF0BA41001FA4BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70E3EC8C1BF0BA41001FA4BC /* Build configuration list for PBXNativeTarget "SpatialChordsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70E3EC8D1BF0BA41001FA4BC /* Debug */,
+				70E3EC8E1BF0BA41001FA4BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70E3EC541BF0BA41001FA4BC /* Project object */;
+}
